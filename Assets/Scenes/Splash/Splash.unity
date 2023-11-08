@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -158,6 +158,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &38275265
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -176,7 +177,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63ae93d4a53e4af7a70ffa9af61e6ad, type: 2}
+  - {fileID: -876546973899608171, guid: dcd53f28bea2c4be8bd749ccb7eab340, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,8 +221,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.255, b: 1, a: 1}
-      key1: {r: 0, g: 0.255, b: 1, a: 1}
+      key0: {r: 0, g: 0.255, b: 1, a: 0.015686275}
+      key1: {r: 0, g: 0.255, b: 1, a: 0.015686275}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -245,16 +246,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!114 &38275266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,13 +269,148 @@ MonoBehaviour:
   m_GameObject: {fileID: 38275263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c28c89824f364b8a910e0bdd84a6bae, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f13eca425ca540f0ac228174e1cb497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _laserLine: {fileID: 38275265}
   _cutLine: {fileID: 1581645373}
   _origin: {fileID: 2019701749}
   _cutPoint: {fileID: 1747341546}
+--- !u!1 &64576544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64576545}
+  - component: {fileID: 64576546}
+  m_Layer: 0
+  m_Name: DiamondCutLine (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &64576545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64576544}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1334845673}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &64576546
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64576544}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Positions:
+  - {x: 0, y: 1, z: 0}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 0.2
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.14901961, g: 0.6784314, b: 0.37647063, a: 0.19607843}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 1, g: 1, b: 1, a: 0}
+      key3: {r: 1, g: 1, b: 1, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 32768
+      ctime1: 65535
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 49537
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!1 &81903702
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +471,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: S
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -398,7 +539,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 81903705}
   m_maskType: 0
 --- !u!23 &81903705
@@ -421,7 +562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -550,7 +691,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -561,6 +703,141 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &126335217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 126335218}
+  - component: {fileID: 126335219}
+  m_Layer: 0
+  m_Name: TriangleCutLine (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &126335218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126335217}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1334845673}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &126335219
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126335217}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Positions:
+  - {x: 0, y: 1, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 0.2
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.18431373, g: 0.5019608, b: 0.9294118, a: 0.19607843}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 1, g: 1, b: 1, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 32768
+      ctime1: 65535
+      ctime2: 65535
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 49151
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!1 &138819789
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,8 +898,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: P
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -688,7 +966,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 138819792}
   m_maskType: 0
 --- !u!23 &138819792
@@ -711,7 +989,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -793,8 +1071,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -860,7 +1139,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 169962466}
   m_maskType: 0
 --- !u!23 &169962466
@@ -883,7 +1162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -953,7 +1232,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 0
-  sharedProfile: {fileID: 11400000, guid: 03b6ed200764e465b8936f2eec37f129, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 157c190a233d545b59d1e91f2d2651ff, type: 2}
 --- !u!1 &216877692
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1260,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d27633ba7c28e47d4af473d0d8bd088a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 84a79278809b24267b5227680a9a5209, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1144,8 +1423,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: C
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1211,7 +1491,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 235154998}
   m_maskType: 0
 --- !u!23 &235154998
@@ -1234,7 +1514,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1289,7 +1569,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: fd87cd20e48394bd58cb60cfdc395359, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 9c6275ee924a64c4b8b1585336dba917, type: 2}
 --- !u!4 &250633086
 Transform:
   m_ObjectHideFlags: 0
@@ -1365,8 +1645,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: R
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1432,7 +1713,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 251067820}
   m_maskType: 0
 --- !u!23 &251067820
@@ -1455,7 +1736,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1511,6 +1792,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &252456023
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1529,7 +1811,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63ae93d4a53e4af7a70ffa9af61e6ad, type: 2}
+  - {fileID: -876546973899608171, guid: 24a73dccd7b6fad4798be282f96a21f4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1597,16 +1879,155 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 2
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
+--- !u!1 &318515848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318515849}
+  - component: {fileID: 318515850}
+  m_Layer: 0
+  m_Name: CircleCutLine (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318515849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318515848}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1334845673}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &318515850
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318515848}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Positions:
+  - {x: 0, y: 1, z: 2}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 0.2
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.9215687, g: 0.34117648, b: 0.34117648, a: 0.19607843}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 1, g: 1, b: 1, a: 1}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 32768
+      ctime1: 65535
+      ctime2: 65535
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 49151
+      atime1: 65535
+      atime2: 65535
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 2
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!1 &357360355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,8 +2088,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1734,7 +2156,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 357360358}
   m_maskType: 0
 --- !u!23 &357360358
@@ -1757,7 +2179,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1799,6 +2221,7 @@ GameObject:
   m_IsActive: 1
 --- !u!120 &360085837
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1817,7 +2240,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63ae93d4a53e4af7a70ffa9af61e6ad, type: 2}
+  - {fileID: -876546973899608171, guid: dcd53f28bea2c4be8bd749ccb7eab340, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1861,8 +2284,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 1, b: 0.42962956, a: 1}
-      key1: {r: 0, g: 1, b: 0.42962956, a: 1}
+      key0: {r: 0, g: 1, b: 0.42962956, a: 0.015686275}
+      key1: {r: 0, g: 1, b: 0.42962956, a: 0.015686275}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1886,16 +2309,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!4 &360085838
 Transform:
   m_ObjectHideFlags: 0
@@ -1920,7 +2347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 360085836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c28c89824f364b8a910e0bdd84a6bae, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f13eca425ca540f0ac228174e1cb497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _laserLine: {fileID: 360085837}
@@ -2000,7 +2427,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
+    type: 3}
   m_Color: {r: 0.1254902, g: 0.12941177, b: 0.14117648, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2071,8 +2499,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: R
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2138,7 +2567,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 423659765}
   m_maskType: 0
 --- !u!23 &423659765
@@ -2161,7 +2590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2229,6 +2658,7 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -2354,12 +2784,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 735386f01867840b9955c8b5eb4dfad7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3dec9670650a4c73b826069829f68c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 16}
+  m_Size: {x: 0.31, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2414,6 +2844,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &472394752
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2432,7 +2863,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63ae93d4a53e4af7a70ffa9af61e6ad, type: 2}
+  - {fileID: -876546973899608171, guid: 24a73dccd7b6fad4798be282f96a21f4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2491,7 +2922,7 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 49151
+      atime0: 49537
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -2500,16 +2931,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!1 &529660722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,8 +3005,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: S
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2637,7 +3073,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 529660725}
   m_maskType: 0
 --- !u!23 &529660725
@@ -2660,7 +3096,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2771,6 +3207,7 @@ GameObject:
   m_IsActive: 1
 --- !u!120 &614736307
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2789,7 +3226,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63ae93d4a53e4af7a70ffa9af61e6ad, type: 2}
+  - {fileID: -876546973899608171, guid: dcd53f28bea2c4be8bd749ccb7eab340, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2833,8 +3270,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 0.015686275}
+      key1: {r: 1, g: 0, b: 0, a: 0.015686275}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2858,16 +3295,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 2
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!4 &614736308
 Transform:
   m_ObjectHideFlags: 0
@@ -2892,7 +3333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 614736306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c28c89824f364b8a910e0bdd84a6bae, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f13eca425ca540f0ac228174e1cb497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _laserLine: {fileID: 614736307}
@@ -2992,8 +3433,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: P
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3059,7 +3501,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 675934851}
   m_maskType: 0
 --- !u!23 &675934851
@@ -3082,7 +3524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3185,7 +3627,7 @@ SpriteRenderer:
   m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &761913005
@@ -3269,7 +3711,7 @@ SpriteRenderer:
   m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &796764176
@@ -3334,8 +3776,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: G
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3401,7 +3844,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 796764179}
   m_maskType: 0
 --- !u!23 &796764179
@@ -3424,7 +3867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3527,7 +3970,7 @@ SpriteRenderer:
   m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &857254406
@@ -3590,8 +4033,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: C
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3657,7 +4101,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 857254409}
   m_maskType: 0
 --- !u!23 &857254409
@@ -3680,7 +4124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3762,8 +4206,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: S
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3829,7 +4274,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 857833369}
   m_maskType: 0
 --- !u!23 &857833369
@@ -3852,7 +4297,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3936,8 +4381,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4003,7 +4449,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 868505620}
   m_maskType: 0
 --- !u!23 &868505620
@@ -4026,7 +4472,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4048,6 +4494,142 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &903448424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903448426}
+  - component: {fileID: 903448425}
+  m_Layer: 0
+  m_Name: Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!96 &903448425
+TrailRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903448424}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 5
+  m_PreviewTimeScale: 1
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_MaskInteraction: 0
+  m_Autodestruct: 0
+  m_Emitting: 1
+  m_ApplyActiveColorSpace: 1
+--- !u!4 &903448426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903448424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936014750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,8 +4692,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4177,7 +4760,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 936014753}
   m_maskType: 0
 --- !u!23 &936014753
@@ -4200,7 +4783,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4329,14 +4912,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
+  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
+  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 1
 --- !u!1 &1025777726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4399,8 +4985,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4466,7 +5053,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1025777729}
   m_maskType: 0
 --- !u!23 &1025777729
@@ -4489,7 +5076,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4571,8 +5158,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: M
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4638,7 +5226,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1048883782}
   m_maskType: 0
 --- !u!23 &1048883782
@@ -4661,7 +5249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4745,8 +5333,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: S
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4812,7 +5401,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1115376280}
   m_maskType: 0
 --- !u!23 &1115376280
@@ -4835,7 +5424,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4919,8 +5508,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4986,7 +5576,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1116433313}
   m_maskType: 0
 --- !u!23 &1116433313
@@ -5009,7 +5599,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5091,8 +5681,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5158,7 +5749,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1163605506}
   m_maskType: 0
 --- !u!23 &1163605506
@@ -5181,7 +5772,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5265,8 +5856,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5332,7 +5924,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1291526807}
   m_maskType: 0
 --- !u!23 &1291526807
@@ -5355,7 +5947,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5408,6 +6000,9 @@ Transform:
   - {fileID: 252456022}
   - {fileID: 1581645372}
   - {fileID: 472394751}
+  - {fileID: 318515849}
+  - {fileID: 126335218}
+  - {fileID: 64576545}
   m_Father: {fileID: 1361209904}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5471,8 +6066,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: C
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5538,7 +6134,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1343809335}
   m_maskType: 0
 --- !u!23 &1343809335
@@ -5561,7 +6157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5611,7 +6207,7 @@ Animator:
   m_GameObject: {fileID: 1361209902}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3bda5e225c2cc4efcaac0098e7269374, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8b18c9de386b3431398723de16156d73, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5658,19 +6254,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1361209902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e61d7237f799434b83b819b418c1f6b, type: 3}
+  m_Script: {fileID: 11500000, guid: f57cc522e2bd84819b42703a7acdd421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _onAnimationEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b86b180aa83584016886f11dba7f0a82, type: 2}
-        m_TargetAssemblyTypeName: LoadSceneEventSO, Scripts
-        m_MethodName: Raise
-        m_Mode: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d123a9aca28e9462fa2ae9f58c0b3f18, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SceneReferenceSO, Scripts
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5757,7 +6353,7 @@ SpriteRenderer:
   m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1389580438
@@ -5822,8 +6418,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: N
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5889,7 +6486,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1389580441}
   m_maskType: 0
 --- !u!23 &1389580441
@@ -5912,7 +6509,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5994,8 +6591,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: G
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6061,7 +6659,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1394080706}
   m_maskType: 0
 --- !u!23 &1394080706
@@ -6084,7 +6682,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6211,8 +6809,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6278,7 +6877,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1439331935}
   m_maskType: 0
 --- !u!23 &1439331935
@@ -6301,7 +6900,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6383,8 +6982,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: G
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6450,7 +7050,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1441337291}
   m_maskType: 0
 --- !u!23 &1441337291
@@ -6473,7 +7073,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6576,7 +7176,7 @@ SpriteRenderer:
   m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1518926041
@@ -6620,9 +7220,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -6694,9 +7302,20 @@ MonoBehaviour:
   m_Dithering: 0
   m_ClearDepth: 1
   m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1556783498
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,8 +7376,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: N
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6824,7 +7444,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1556783501}
   m_maskType: 0
 --- !u!23 &1556783501
@@ -6847,7 +7467,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6903,6 +7523,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &1581645373
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6921,7 +7542,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63ae93d4a53e4af7a70ffa9af61e6ad, type: 2}
+  - {fileID: -876546973899608171, guid: 24a73dccd7b6fad4798be282f96a21f4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6989,16 +7610,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!1 &1614650389
 GameObject:
   m_ObjectHideFlags: 0
@@ -7026,6 +7651,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7110,8 +7754,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7177,7 +7822,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1638561524}
   m_maskType: 0
 --- !u!23 &1638561524
@@ -7200,7 +7845,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7268,6 +7913,7 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -7395,8 +8041,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: P
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7462,7 +8109,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1684070524}
   m_maskType: 0
 --- !u!23 &1684070524
@@ -7485,7 +8132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7567,8 +8214,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7634,7 +8282,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1697481255}
   m_maskType: 0
 --- !u!23 &1697481255
@@ -7657,7 +8305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7721,6 +8369,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7787,8 +8454,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: N
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7854,7 +8522,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1701319486}
   m_maskType: 0
 --- !u!23 &1701319486
@@ -7877,7 +8545,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7959,8 +8627,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8026,7 +8695,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1732698162}
   m_maskType: 0
 --- !u!23 &1732698162
@@ -8049,7 +8718,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8117,6 +8786,7 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -8265,7 +8935,7 @@ SpriteRenderer:
   m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1840217788
@@ -8328,8 +8998,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8395,7 +9066,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1840217791}
   m_maskType: 0
 --- !u!23 &1840217791
@@ -8418,7 +9089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8502,8 +9173,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: R
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8569,7 +9241,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1842460068}
   m_maskType: 0
 --- !u!23 &1842460068
@@ -8592,7 +9264,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8674,8 +9346,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: D
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8741,7 +9414,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1845536288}
   m_maskType: 0
 --- !u!23 &1845536288
@@ -8764,7 +9437,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8846,8 +9519,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: D
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8913,7 +9587,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1878939540}
   m_maskType: 0
 --- !u!23 &1878939540
@@ -8936,7 +9610,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9031,7 +9705,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 00d911ec7a8f449bf811f869933437da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c59e4fcb38c334d5fad16dfdf0c114ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9102,8 +9776,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9169,7 +9844,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 2013844938}
   m_maskType: 0
 --- !u!23 &2013844938
@@ -9192,7 +9867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9276,8 +9951,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: D
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9343,7 +10019,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 2016135093}
   m_maskType: 0
 --- !u!23 &2016135093
@@ -9366,7 +10042,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9430,6 +10106,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9496,8 +10191,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
-  m_sharedMaterial: {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
+  m_sharedMaterial: {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9563,7 +10259,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 2029126610}
   m_maskType: 0
 --- !u!23 &2029126610
@@ -9586,7 +10282,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -486606536173227009, guid: ef5bfa8eef0d54578b8e4d7b360dc1ef, type: 2}
+  - {fileID: -486606536173227009, guid: 17849d094cd13418d9f0675751ea9c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
