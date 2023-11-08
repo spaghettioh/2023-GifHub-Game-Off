@@ -1,0 +1,12 @@
+:root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(34, 0, 50);
+    align-items: center;
+    justify-content: center;
+    -unity-text-align: upper-center;
+    -unity-paragraph-spacing: 28px;
+}

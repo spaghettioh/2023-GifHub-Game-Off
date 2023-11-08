@@ -1,0 +1,159 @@
+:root {
+  --theme-primary-color: rgb(0, 255, 102);
+  --text-color: rgba(255, 255, 255, 0.87);
+  --text-size: 28px;
+  --text-shadow: 0 1px 4px rgb(0, 0, 0);
+  --scrim-color: rgba(0, 24, 8, 0.8);
+  --container-color: var(--scrim-color);
+  --small: 4px;
+  --medium: 8px;
+  --large: 16px;
+  --x-large: 24px;
+  --spacing-small: var(--small);
+  --spacing-medium: var(--medium);
+  --spacing-large: var(--large);
+  --spacing-x-large: var(--x-large);
+  --radius-small: var(--small);
+  --radius-medium: var(--medium);
+  --radius-large: var(--large);
+  --radius-x-large: var(--x-large);
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}
+
+.text-x-large {
+  font-size: 32px;
+}
+
+.text-large {
+  font-size: 28px;
+}
+
+.text-medium {
+  font-size: 24px;
+}
+
+.text-small {
+  font-size: 20px;
+}
+
+.text-center {
+  -unity-text-align: upper-center;
+}
+
+Label {
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+  -unity-font-definition: resource('Fonts/Font_Orbitron_SDF');
+  white-space: normal;
+}
+
+Label.unity-text-element {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+Label.unity-label {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+#t_spacer_small {
+  min-width: var(--small);
+  min-height: var(--small);
+}
+
+#t_spacer_medium {
+  min-width: var(--medium);
+  min-height: var(--medium);
+}
+
+#t_spacer_large {
+  min-width: var(--large);
+  min-height: var(--large);
+}
+
+#t_spacer_x-large {
+  min-width: var(--x-large);
+  min-height: var(--x-large);
+}
+
+#t_divider {
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+#t_scrim {
+  background-color: var(--scrim-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.flex {
+  flex-grow: 1;
+}
+
+.fade {
+  opacity: 0;
+}
+
+.container {
+  background-color: var(--container-color);
+  border-top-left-radius: var(--radius-medium);
+  border-bottom-left-radius: var(--radius-medium);
+  border-top-right-radius: var(--radius-medium);
+  border-bottom-right-radius: var(--radius-medium);
+}
+
+.theme-primary {
+  color: var(--theme-primary-color);
+  border-color: var(--theme-primary-color);
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  -unity-background-image-tint-color: var(--theme-primary-color);
+}
+
+.theme-primary-font-color {
+  color: var(--theme-primary-color);
+}
+
+.theme-primary-border-color {
+  border-color: var(--theme-primary-color);
+}
+
+.theme-primary-background-color {
+  background-color: var(--theme-primary-color);
+}

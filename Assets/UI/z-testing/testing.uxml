@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/z-testing/s_testing.uss?fileID=7433441132597879392&amp;guid=5fec5c51bd0a443949dde0d2bb615723&amp;type=3#s_testing" />
+    <Style src="project://database/Assets/UI/common/s_common.uss?fileID=7433441132597879392&amp;guid=d870a5dbad30e4ca4803ac514c62af6e&amp;type=3#s_common" />
+    <ui:Label tabindex="-1" text="Game loaded successfully." display-tooltip-when-elided="true" class="text-large" />
+</ui:UXML>

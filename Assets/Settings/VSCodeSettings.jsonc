@@ -1,0 +1,150 @@
+{
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "workbench.preferredDarkColorTheme": "Visual Studio 2019 Dark",
+    "editor.fontSize": 16,
+    "editor.stickyScroll.enabled": true,
+    // FORMATTING
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.minimap.maxColumn": 80,
+    "editor.rulers": [
+        80
+    ],
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
+    "csharp.format.enable": true,
+    "editor.wrappingIndent": "indent",
+    "csharpextensions.privateMemberPrefix": "_",
+    "[csharp]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode",
+    },
+    // COLOR CUSTOMIZATIONS
+    "workbench.colorCustomizations": {
+        "[Visual Studio 2019 Dark]": {
+            "editor.background": "#202124",
+            "editorBracketHighlight.foreground1": "#bdc1c6",
+            "editorBracketHighlight.foreground2": "#bdc1c6",
+            "editorBracketHighlight.foreground3": "#bdc1c6",
+            "statusBar.background": "#263238",
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Visual Studio 2019 Dark]": {
+            "comments": {
+                "foreground": "#4cb457",
+                "fontStyle": "italic"
+            },
+            "textMateRules": [
+                {
+                    "scope": [
+                        "comment.documentation",
+                        "comment.documentation.delimiter",
+                        "comment.documentation.name"
+                    ],
+                    "settings": {
+                        "foreground": "#74b77b",
+                        "fontStyle": "italic bold"
+                    }
+                },
+                {
+                    // All the punctuation ever
+                    "scope": "punctuation",
+                    "settings": {
+                        "foreground": "#bdc1c6",
+                    }
+                },
+                {
+                    // Events
+                    "scope": "variable.other.event",
+                    "settings": {
+                        "foreground": "#bfa2d3",
+                    }
+                },
+                {
+                    // if, else, return, etc
+                    "scope": "keyword.control",
+                    "settings": {
+                        "foreground": "#da8cc4",
+                    }
+                },
+                //                 semantic token type	event
+                // foreground	variable.other.event
+                // variable
+                // meta.definition.variable.name
+                // support.variable
+                // entity.name.variable
+                // { "foreground": "#9CDCFE" }
+                // textmate scopes	variable.other.object.property.cs
+                // source.cs
+            ],
+        }
+    },
+    // TodoTree extension
+    "todo-tree.highlights.defaultHighlight": {
+        // "background": "white",
+        "icon": "alert",
+        "type": "tag",
+        "fontStyle": "italic bold",
+        "foreground": "#000000",
+        "gutterIcon": true,
+        // "iconColour": "blue",
+        "opacity": 50,
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "alert",
+            "background": "#E040FB",
+            "fontStyle": "italic bold",
+            "iconColour": "#E040FB",
+        },
+        "CLEANUP": {
+            "icon": "alert",
+            "background": "#E040FB",
+            "fontStyle": "italic bold",
+            "iconColour": "#E040FB",
+        },
+        "NOTE": {
+            "icon": "note",
+            "background": "#FFF176",
+            "fontStyle": "italic bold",
+            "iconColour": "#FFF176",
+        },
+        "BUG": {
+            "icon": "alert",
+            "background": "#FF5252",
+            "fontStyle": "italic bold",
+            "iconColour": "#FF5252",
+        },
+        "FR": {
+            "icon": "note",
+            "background": "#E040FB",
+            "fontStyle": "italic bold",
+            "iconColour": "#00ff88",
+        },
+        "INVESTIGATE": {
+            "icon": "note",
+            "background": "#E040FB",
+            "fontStyle": "italic bold",
+            "iconColour": "#00ffea",
+        },
+    },
+    "todo-tree.general.tags": [
+        "TODO",
+        "BUG",
+        "CLEANUP",
+        "INVESTIGATE",
+        "FR",
+        "NOTE",
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
+    "editor.mouseWheelScrollSensitivity": 0.5,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.uss": "css",
+        "*.tss": "css",
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "omnisharp.useModernNet": false,
+    "editor.codeActionsOnSave": {},
+    "todo-tree.general.statusBar": "total",
+}
