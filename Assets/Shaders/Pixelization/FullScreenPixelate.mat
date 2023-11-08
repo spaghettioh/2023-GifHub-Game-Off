@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FullScreenPixelate
-  m_Shader: {fileID: -6465566751694194690, guid: d8c4eb5393ed54323b175c8b27dcbbfa, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: d8c4eb5393ed54323b175c8b27dcbbfa,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,8 +38,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AspectRatioWidth: 16
+    - _AspectRationHeight: 9
     - _PPU: 4
-    - _VerticalResolution: 360
+    - _VerticalResolution: 240
     m_Colors:
+    - _AspectRatio: {r: 16, g: 9, b: 0, a: 0}
     - _Resolution: {r: 640, g: 360, b: 0, a: 0}
   m_BuildTextureStacks: []
