@@ -1,3 +1,6 @@
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -23,7 +26,13 @@ public abstract class UITemplatePool
         return template;
     }
 
-    protected override void OnRequest(TemplateContainer template) => template.SetDisplay(true);
+    protected override void OnRequest(TemplateContainer template)
+    {
+        template.SetDisplay(true);
+    }
 
-    protected override void OnRelease(TemplateContainer template) => template.SetDisplay(false);
+    protected override void OnRelease(TemplateContainer template)
+    {
+        template.SetDisplay(false);
+    }
 }

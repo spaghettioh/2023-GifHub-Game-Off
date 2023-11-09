@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: bad599b04b1e141b7844774681dae327
+guid: 4ea1c5b43aec046aea284b6715683b63
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _audioEmitterPool: {fileID: 11400000, guid: 48007313991de4c9ca658111a27dd61d, type: 2}
+  - _audioEvent: {fileID: 11400000, guid: 7e2b2ca9f985f46a8b9a7f2565a280e4, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

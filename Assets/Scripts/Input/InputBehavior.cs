@@ -19,5 +19,12 @@ public class InputBehavior : MonoBehaviour
         InputUser.onChange -= InputUserOnChange;
     }
 
-    private void InputUserOnChange(InputUser arg1, InputUserChange arg2, InputDevice arg3) => _inputEvent.OnInputDeviceChanged(arg1, arg2, arg3);
+    private void InputUserOnChange(
+        InputUser arg1,
+        InputUserChange arg2,
+        InputDevice arg3
+    )
+    {
+        _inputEvent.OnInputDeviceChanged(arg1, arg2, arg3);
+    }
 }

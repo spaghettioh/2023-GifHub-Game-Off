@@ -1,25 +1,37 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "ClumpData", menuName = "Game Off/ClumpData")]
 public class ClumpDataSO : ScriptableObject
 {
-    public UnityAction<int> OnPropCountChanged;
-    public UnityAction<float> OnStatsChanged;
+    public event Action<int> OnPropCountChanged;
+    public event Action<float> OnStatsChanged;
 
-    [field: SerializeField] public float MaxSpeed { get; private set; }
-    [field: SerializeField] public float MinColliderRadius { get; private set; }
-    [field: SerializeField] public float MaxColliderRadius { get; private set; }
-    [field: SerializeField] public float MinMoveForce { get; private set; }
-    [field: SerializeField] public float MaxMoveForce { get; private set; }
+    [field: SerializeField]
+    public float MaxSpeed { get; private set; }
+    [field: SerializeField]
+    public float MinColliderRadius { get; private set; }
+    [field: SerializeField]
+    public float MaxColliderRadius { get; private set; }
+    [field: SerializeField]
+    public float MinMoveForce { get; private set; }
+    [field: SerializeField]
+    public float MaxMoveForce { get; private set; }
 
     [Header("DEBUG ==========")]
     [SerializeField] private string _header;
-    [field: SerializeField] public SphereCollider Collider { get; private set; }
-    [field: SerializeField] public Transform Transform { get; private set; }
-    [field: SerializeField] public int CollectedCount { get; private set; }
-    [field: SerializeField] public float Velocity { get; private set; }
-    [field: SerializeField] public float MoveForce { get; private set; }
+    [field: SerializeField]
+    public SphereCollider Collider { get; private set; }
+    [field: SerializeField]
+    public Transform Transform { get; private set; }
+    public Vector3 Euler => Transform.eulerAngles;
+    public Vector3 Position => Transform.position;
+    [field: SerializeField]
+    public int CollectedCount { get; private set; }
+    [field: SerializeField]
+    public float Velocity { get; private set; }
+    [field: SerializeField]
+    public float MoveForce { get; private set; }
 
     public void ConfigureData(Transform t, SphereCollider c)
     {

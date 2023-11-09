@@ -22,7 +22,7 @@ public class MapInputHandler : GameInput.IMapActions
 
     internal void Enable()
     {
-        _gameInput.Atlas.Disable();
+        _gameInput.Clump.Disable();
         _gameInput.Map.Enable();
         _gameInput.UI.Disable();
     }
@@ -37,9 +37,6 @@ public class MapInputHandler : GameInput.IMapActions
 
     public void OnPan(InputAction.CallbackContext c) =>
         c.RaiseInputVector2(OnPanInput);
-
-    public void OnTeleportSelect(InputAction.CallbackContext c) =>
-        c.RaiseInputStarted(OnTeleportSelectInput);
 
     public void OnZoomIn(InputAction.CallbackContext c) =>
         c.RaiseInputPerformed(OnZoomInInput);

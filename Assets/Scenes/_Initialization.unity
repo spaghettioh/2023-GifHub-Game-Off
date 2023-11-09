@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -149,16 +149,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 351339834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edcfd3079194a4564a473f201cf8d8c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1936d3a26c4d44755b8ebaa77b6c59c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persistentManagersScene: {fileID: 11400000, guid: 2d0e3d99ab7df4598b57fe8edfd11427, type: 2}
-  _firstScene: {fileID: 11400000, guid: f59e7d567d1964bf4bf2a96f7980a1eb, type: 2}
+  _persistentManagersScene: {fileID: 11400000, guid: 55ee463c2debe4983a62939c5e6be4a6,
+    type: 2}
+  _firstScene: {fileID: 11400000, guid: 2b195726cd5c540198b8564219a50e6b, type: 2}
   _sceneLoadEvent:
-    m_AssetGUID: b86b180aa83584016886f11dba7f0a82
+    m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
+    m_EditorAssetChanged: 1
 --- !u!4 &351339836
 Transform:
   m_ObjectHideFlags: 0

@@ -7,18 +7,18 @@ public class UIInitializationSystem : MonoBehaviour
     [SerializeField]
     private PanelSettings _panelSettings;
 
-    [FormerlySerializedAs("_clumpTransform")]
+    [FormerlySerializedAs("_atlasTransform")]
     [SerializeField]
-    private TransformEventSO _transformEvent;
+    private TransformAnchorSO _transformAnchor;
 
     private void OnEnable() =>
-        _transformEvent.OnEventRaised += HandleClumpSpawned;
+        _transformAnchor.OnTransformSet += HandleSpawned;
 
     private void OnDisable() =>
-        _transformEvent.OnEventRaised -= HandleClumpSpawned;
+        _transformAnchor.OnTransformSet -= HandleSpawned;
     
     private void Start() => _panelSettings.SetUISize();
 
-    private static void HandleClumpSpawned(Transform _) =>
+    private static void HandleSpawned(Transform _) =>
         Camera.main.SetUICamera();
 }

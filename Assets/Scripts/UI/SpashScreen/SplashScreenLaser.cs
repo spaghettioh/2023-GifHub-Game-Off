@@ -15,7 +15,7 @@ public class SplashScreenLaser : MonoBehaviour
 
     [SerializeField]
     private Transform _cutPoint;
-    
+
     private IEnumerator Start()
     {
         var index = 0;
@@ -26,7 +26,7 @@ public class SplashScreenLaser : MonoBehaviour
             var pos = _cutPoint.position;
             Vector3 cut = new(pos.x, pos.y, cutPointZ);
             _laserLine.SetPosition(0, _origin.position);
-            _laserLine.SetPosition(1, pos);
+            _laserLine.SetPosition(1, _cutPoint.position);
 
             _cutLine.positionCount = index + 1;
             _cutLine.SetPosition(index, cut);
@@ -40,4 +40,6 @@ public class SplashScreenLaser : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
+    private void Update() { }
 }

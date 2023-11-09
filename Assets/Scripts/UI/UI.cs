@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public abstract class UI : MonoBehaviour
 {
     // public UIDocument Document { get; private set; }
-    protected VisualElement _Root { get; private set; }
+    public VisualElement _Root { get; private set; }
 
     /// <summary>
     ///     Just grabs the document component and sets the root.

@@ -10,8 +10,9 @@ public class CameraFollowSetterSystem : MonoBehaviour
         Follow,
     }
 
+    [FormerlySerializedAs("_atlasSpawned")]
     [SerializeField]
-    private TransformEventSO _event;
+    private TransformEventSO _transformEvent;
 
     [SerializeField]
     private TransformAnchorSO _target;
@@ -23,12 +24,12 @@ public class CameraFollowSetterSystem : MonoBehaviour
     private Setting _setting;
 
     private void OnEnable() =>
-        _event.OnEventRaised += OnEvent;
+        _transformEvent.OnEventRaised += HandleTransformEvent;
 
     private void OnDisable() =>
-        _event.OnEventRaised -= OnEvent;
+        _transformEvent.OnEventRaised -= HandleTransformEvent;
 
-    private void OnEvent(Transform _)
+    private void HandleTransformEvent(Transform _)
     {
         if (_setting == Setting.LookAt)
         {

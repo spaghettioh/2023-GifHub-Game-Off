@@ -6,5 +6,5 @@ using UnityEngine;
 public class ColorSO : ScriptableObject
 {
     [field: SerializeField]
-    public Color Color { get; private set; }
+    public Color RGBA { get; private set; }
 }

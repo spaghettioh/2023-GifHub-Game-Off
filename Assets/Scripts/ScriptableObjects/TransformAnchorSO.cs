@@ -10,7 +10,7 @@ using UnityEngine.Events;
 public class TransformAnchorSO : ScriptableObject
 {
     public event UnityAction<Transform> OnTransformSet;
-    internal bool IsSet;
+    internal bool isSet;
 
     public Transform Transform { get; private set; }
 

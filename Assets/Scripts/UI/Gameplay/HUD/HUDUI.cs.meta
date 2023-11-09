@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bc258892822564d9ea6cb50a1a6eac8c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - <InventoryData>k__BackingField: {fileID: 11400000, guid: c2a7d2af4198c4001b607ca24e0b62d0, type: 2}
+  - TweenerPool: {fileID: 11400000, guid: 16eb3f00e09cc4e9ea54d32c117ad2a8, type: 2}
+  - _fadeEvent: {fileID: 11400000, guid: a0e29417b5d054226b2aadef7d4e6425, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -25,7 +25,7 @@ public class UIInputHandler : GameInput.IUIActions
 
     internal void Enable()
     {
-        _gameInput.Atlas.Disable();
+        _gameInput.Clump.Disable();
         _gameInput.Map.Disable();
         _gameInput.UI.Enable();
     }
@@ -46,12 +46,6 @@ public class UIInputHandler : GameInput.IUIActions
 
     public void OnSelect(InputAction.CallbackContext c) =>
         c.RaiseInputStarted(OnSelectInput);
-
-    public void OnSwapSkills(InputAction.CallbackContext c) =>
-        c.RaiseInputStarted(OnSwapSkillsInput);
-
-    public void OnSwapWeapons(InputAction.CallbackContext c) =>
-        c.RaiseInputStarted(OnSwapWeaponsInput);
 
     public void OnUnpause(InputAction.CallbackContext c) =>
         c.RaiseInputStarted(OnUnpauseInput);

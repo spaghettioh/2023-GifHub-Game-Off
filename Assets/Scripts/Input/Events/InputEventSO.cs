@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.Users;
 public class InputEventSO : ScriptableObject
 {
     private GameInput _gameInput;
-    public AtlasInputHandler Atlas;
+    public ClumpInputHandler Clump;
     public MapInputHandler Map;
     public UIInputHandler UI;
     private InputControlScheme _controlScheme;
@@ -16,7 +16,7 @@ public class InputEventSO : ScriptableObject
     public bool IsKeyboardMouse =>
         _controlScheme == _gameInput.KeyboardMouseScheme;
 
-    public void EnableGameplay() => Atlas.Enable();
+    public void EnableAtlas() => Clump.Enable();
 
     public void EnableUI() => UI.Enable();
 
@@ -24,7 +24,7 @@ public class InputEventSO : ScriptableObject
 
     public void DisableAllInput()
     {
-        Atlas.Disable();
+        Clump.Disable();
         Map.Disable();
         UI.Disable();
     }
@@ -37,7 +37,7 @@ public class InputEventSO : ScriptableObject
         }
 
         _gameInput = new();
-        Atlas = new(_gameInput);
+        Clump = new(_gameInput);
         Map = new(_gameInput);
         UI = new(_gameInput);
     }

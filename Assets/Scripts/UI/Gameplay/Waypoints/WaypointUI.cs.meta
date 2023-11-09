@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f6e888e45e1f43a7990a8eeb3d6fbca
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _waypointMarkerTemplate: {fileID: 9197481963319205126, guid: 6d8a0c3d6589642ca9a20654a2bb17df, type: 3}
+  - _interactableEvent: {fileID: 11400000, guid: 1f1d61473710f483f88c75ced07b103f, type: 2}
+  - _atlasSpawned: {fileID: 11400000, guid: 5a57b2258fd124795b95cdfef9a7b08d, type: 2}
+  - _templatePool: {fileID: 11400000, guid: 408210896beb54f9c9dc7335676964bb, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

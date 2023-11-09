@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3537854429830003474
 MonoBehaviour:
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e323c1427e6e496fa598dee1b86df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelSettings: {fileID: 11400000, guid: 9e2f30d69ad254e5d800c4b5b4f1a5f3, type: 2}
-  _atlasTransform: {fileID: 11400000, guid: 9e92608e71869460a93857489722fe99, type: 2}
+  _panelSettings: {fileID: 11400000, guid: 7c253ee7885c34dcaacf2b14713ad24f, type: 2}
+  _transformAnchor: {fileID: 11400000, guid: 03fb7e63ed8654037a62e42e8ecd4df1, type: 2}

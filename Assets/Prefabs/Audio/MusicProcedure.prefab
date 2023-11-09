@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thisScene: {fileID: 0}
-  _startMusic: {fileID: 11400000, guid: 4503becde2d684c03826bced1950a32e, type: 2}
-  _audioEvent: {fileID: 11400000, guid: 7e2b2ca9f985f46a8b9a7f2565a280e4, type: 2}
+  _startMusic: {fileID: 11400000, guid: 1d0972a68203640f38d8c85769f80951, type: 2}
+  _audioEvent: {fileID: 11400000, guid: 22ac2367433de4cbf9f5cdd8aa106ab3, type: 2}

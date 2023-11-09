@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 5e57f35c2a42d49f3a145010e14602b6
+guid: 6670f12d9bfa74518aef01e805e41a14
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - <AudioEvent>k__BackingField: {fileID: 11400000, guid: 7e2b2ca9f985f46a8b9a7f2565a280e4, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
