@@ -1,8 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(
-    fileName = "Pool_FXObject",
-    menuName = "Gameplay/FX/FX object pool"
+    fileName = "Pool_FXObject", menuName = "Gameplay/FX/FX object pool"
 )]
 public class VFXHandlerPoolSO : ComponentPool<VFXHandler>
 {

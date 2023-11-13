@@ -1,52 +1,51 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 /// <summary>
-/// Storage of elements opened with keys from owners
+///     Storage of elements opened with keys from owners
 /// </summary>
-/// <typeparam name="TOwner">The key owner</typeparam>
-/// <typeparam name="TEntity">The entity an owner owns</typeparam>
+/// <typeparam name="TOwner">
+///     The key owner
+/// </typeparam>
+/// <typeparam name="TEntity">
+///     The entity an owner owns
+/// </typeparam>
 public class Vault<TOwner, TEntity>
 {
-    private int _nextUniqueKey = 0;
-    private List<VaultKey> _keys;
-    public List<VaultKey> Keys => _keys;
-    private List<TEntity> _entities;
-    public List<TEntity> Entities => _entities;
+    private int _nextUniqueKey;
+    public List<VaultKey> Keys { get; }
+    public List<TEntity> Entities { get; }
 
     public Vault()
     {
-        _keys = new();
-        _entities = new();
+        Keys = new();
+        Entities = new();
     }
 
-    private VaultKey GetNewKey(TOwner owner)
-    {
-        return new VaultKey(_nextUniqueKey++, owner as Type);
-    }
+    private VaultKey GetNewKey(TOwner owner) =>
+        new(_nextUniqueKey++, owner as Type);
 
     public bool ContainsOwner(TOwner owner)
     {
-        var results = _keys.FindAll(key => key.Owner.Equals(owner));
+        List<VaultKey> results = Keys.FindAll(key => key.Owner.Equals(owner));
         return results.Count > 0;
     }
 
     public VaultKey Add(TOwner owner, TEntity entity)
     {
-        VaultKey key = GetNewKey(owner);
+        var key = GetNewKey(owner);
 
-        _keys.Add(key);
-        _entities.Add(entity);
+        Keys.Add(key);
+        Entities.Add(entity);
 
         return key;
     }
 
     public bool TryGetEntity(VaultKey key, out TEntity entity)
     {
-        int index = _keys.FindIndex(k => k.Equals(key));
-        entity = default(TEntity);
+        var index = Keys.FindIndex(k => k.Equals(key));
+        entity = default;
 
         if (index < 0)
         {
@@ -57,7 +56,7 @@ public class Vault<TOwner, TEntity>
 #endif
             return false;
         }
-        entity = _entities[index];
+        entity = Entities[index];
         return true;
     }
 
@@ -65,7 +64,7 @@ public class Vault<TOwner, TEntity>
     {
         if (TryGetEntity(key, out var entity))
         {
-            var keyIndex = _keys.FindIndex(k => k == key);
+            var keyIndex = Keys.FindIndex(k => k == key);
             RemoveAt(keyIndex);
         }
         return entity;
@@ -78,8 +77,8 @@ public class Vault<TOwner, TEntity>
             return false;
         }
 
-        _keys.RemoveAt(index);
-        _entities.RemoveAt(index);
+        Keys.RemoveAt(index);
+        Entities.RemoveAt(index);
 
         return true;
     }

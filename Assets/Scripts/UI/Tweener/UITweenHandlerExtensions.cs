@@ -3,8 +3,7 @@ using System;
 public static class UITweenHandlerExtensions
 {
     public static UITweenHandler OnComplete(
-        this UITweenHandler tweenRef,
-        Action onComplete = null
+        this UITweenHandler tweenRef, Action onComplete = null
     )
     {
         onComplete?.Invoke();
@@ -12,8 +11,7 @@ public static class UITweenHandlerExtensions
     }
 
     public static UITweenHandler OnUpdate(
-        this UITweenHandler tweenRef,
-        Action onUpdate = null
+        this UITweenHandler tweenRef, Action onUpdate = null
     )
     {
         onUpdate?.Invoke();

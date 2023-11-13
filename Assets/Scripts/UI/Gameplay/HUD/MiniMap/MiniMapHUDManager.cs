@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class MiniMapHUDManager : HUDManager
@@ -8,7 +7,7 @@ public class MiniMapHUDManager : HUDManager
     private string _markerElementId;
 
     [SerializeField]
-    private ClumpDataSO _clumpRuntimeData;
+    private ClumpRuntimeDataSO _clumpRuntimeData;
 
     private TemplateContainer _template;
 

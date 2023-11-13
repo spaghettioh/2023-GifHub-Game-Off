@@ -1,11 +1,8 @@
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public abstract class UITemplatePool
-    : PoolBase<TemplateContainer, VisualElement>
+public abstract class
+    UITemplatePool : PoolBase<TemplateContainer, VisualElement>
 {
     [SerializeField]
     private VisualTreeAsset _templateAsset;

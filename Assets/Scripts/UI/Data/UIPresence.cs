@@ -1,13 +1,14 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class UIPresence
 {
     [field: SerializeField]
     public string Name { get; private set; }
 
-    [field: SerializeField, TextArea(1, 6)]
+    [field: SerializeField]
+    [field: TextArea(1, 6)]
     public string Description { get; private set; }
 
     [field: SerializeField]

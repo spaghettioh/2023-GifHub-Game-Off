@@ -43,26 +43,26 @@ public abstract class MenuUI : UI
 
     protected virtual void SubscribeToInput()
     {
-        _Input.UI.OnCancelInput += HandleCursorCancel;
-        _Input.UI.OnMoveCursorDownInput += HandleCursorMoveDown;
-        _Input.UI.OnMoveCursorLeftInput += HandleCursorMoveLeft;
-        _Input.UI.OnMoveCursorRightInput += HandleCursorMoveRight;
-        _Input.UI.OnMoveCursorUpInput += HandleCursorMoveUp;
-        _Input.UI.OnSelectInput += HandleCursorSelect;
-        _Input.UI.OnSwapSkillsInput += HandleSwapSkills;
-        _Input.UI.OnSwapWeaponsInput += HandleSwapWeapons;
+        // _Input.UI.OnCancelInput += HandleCursorCancel;
+        // _Input.UI.OnMoveCursorDownInput += HandleCursorMoveDown;
+        // _Input.UI.OnMoveCursorLeftInput += HandleCursorMoveLeft;
+        // _Input.UI.OnMoveCursorRightInput += HandleCursorMoveRight;
+        // _Input.UI.OnMoveCursorUpInput += HandleCursorMoveUp;
+        // _Input.UI.OnSelectInput += HandleCursorSelect;
+        // _Input.UI.OnSwapSkillsInput += HandleSwapSkills;
+        // _Input.UI.OnSwapWeaponsInput += HandleSwapWeapons;
     }
 
     protected virtual void UnsubscribeFromInput()
     {
-        _Input.UI.OnCancelInput -= HandleCursorCancel;
-        _Input.UI.OnMoveCursorDownInput -= HandleCursorMoveDown;
-        _Input.UI.OnMoveCursorLeftInput -= HandleCursorMoveLeft;
-        _Input.UI.OnMoveCursorRightInput -= HandleCursorMoveRight;
-        _Input.UI.OnMoveCursorUpInput -= HandleCursorMoveUp;
-        _Input.UI.OnSelectInput -= HandleCursorSelect;
-        _Input.UI.OnSwapSkillsInput -= HandleSwapSkills;
-        _Input.UI.OnSwapWeaponsInput -= HandleSwapWeapons;
+        // _Input.UI.OnCancelInput -= HandleCursorCancel;
+        // _Input.UI.OnMoveCursorDownInput -= HandleCursorMoveDown;
+        // _Input.UI.OnMoveCursorLeftInput -= HandleCursorMoveLeft;
+        // _Input.UI.OnMoveCursorRightInput -= HandleCursorMoveRight;
+        // _Input.UI.OnMoveCursorUpInput -= HandleCursorMoveUp;
+        // _Input.UI.OnSelectInput -= HandleCursorSelect;
+        // _Input.UI.OnSwapSkillsInput -= HandleSwapSkills;
+        // _Input.UI.OnSwapWeaponsInput -= HandleSwapWeapons;
     }
 
     protected virtual void OpenMenu()
@@ -70,7 +70,7 @@ public abstract class MenuUI : UI
         SubscribeToInput();
         Time.timeScale = 0f;
         _audioEvent.RaiseOpenMenu(true, name);
-        _Input.EnableUI();
+        // _Input.EnableUI();
         ShowUI();
         PlaySound(_MenuSounds.Open);
     }
@@ -81,7 +81,7 @@ public abstract class MenuUI : UI
         Time.timeScale = 1f;
         _audioEvent.RaiseOpenMenu(false, name);
         HideUI();
-        _Input.EnableAtlas();
+        // _Input.EnableAtlas();
         ResetMenu();
     }
 

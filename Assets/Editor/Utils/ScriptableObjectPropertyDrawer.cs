@@ -23,15 +23,12 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
         "TMPro.TMP_FontAsset",
     };
     public override float GetPropertyHeight(
-        SerializedProperty property,
-        GUIContent label
+        SerializedProperty property, GUIContent label
     )
     {
         var totalHeight = EditorGUIUtility.singleLineHeight;
-        if (
-            property.objectReferenceValue == null
-            || !AreAnySubPropertiesVisible(property)
-        )
+        if (property.objectReferenceValue == null
+            || !AreAnySubPropertiesVisible(property))
         {
             return totalHeight;
         }
@@ -58,9 +55,8 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
                     continue;
                 }
                 var subProp = serializedObject.FindProperty(prop.name);
-                var height =
-                    EditorGUI.GetPropertyHeight(subProp, null, true)
-                    + EditorGUIUtility.standardVerticalSpacing;
+                var height = EditorGUI.GetPropertyHeight(subProp, null, true)
+                             + EditorGUIUtility.standardVerticalSpacing;
                 totalHeight += height;
             }
             while (prop.NextVisible(false));
@@ -254,9 +250,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
 
     // public void OnGUItoo(
     public override void OnGUI(
-        Rect position,
-        SerializedProperty property,
-        GUIContent label
+        Rect position, SerializedProperty property, GUIContent label
     )
     {
         EditorGUI.BeginProperty(position, label, property);
@@ -270,33 +264,24 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
         }
 
         ScriptableObject propertySO = null;
-        if (
-            !property.hasMultipleDifferentValues
+        if (!property.hasMultipleDifferentValues
             && property.serializedObject.targetObject != null
-            && property.serializedObject.targetObject is ScriptableObject
-        )
+            && property.serializedObject.targetObject is ScriptableObject)
         {
-            propertySO = (ScriptableObject)
-                property.serializedObject.targetObject;
+            propertySO =
+                (ScriptableObject)property.serializedObject.targetObject;
         }
 
         var guiContent = new GUIContent(property.displayName);
         var foldoutRect = new Rect(
-            position.x,
-            position.y,
-            EditorGUIUtility.labelWidth,
+            position.x, position.y, EditorGUIUtility.labelWidth,
             EditorGUIUtility.singleLineHeight
         );
-        if (
-            property.objectReferenceValue != null
-            && AreAnySubPropertiesVisible(property)
-        )
+        if (property.objectReferenceValue != null
+            && AreAnySubPropertiesVisible(property))
         {
             property.isExpanded = EditorGUI.Foldout(
-                foldoutRect,
-                property.isExpanded,
-                guiContent,
-                true
+                foldoutRect, property.isExpanded, guiContent, true
             );
         }
         else
@@ -309,10 +294,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             foldoutRect.x += 12;
 
             EditorGUI.Foldout(
-                foldoutRect,
-                property.isExpanded,
-                guiContent,
-                true,
+                foldoutRect, property.isExpanded, guiContent, true,
                 EditorStyles.label
             );
         }
@@ -338,16 +320,12 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
         }
 
         var buttonRect = new Rect(
-            position.x + position.width - BUTTON_WIDTH,
-            position.y,
-            BUTTON_WIDTH,
-            EditorGUIUtility.singleLineHeight
+            position.x + position.width - BUTTON_WIDTH, position.y,
+            BUTTON_WIDTH, EditorGUIUtility.singleLineHeight
         );
 
-        if (
-            property.propertyType == SerializedPropertyType.ObjectReference
-            && property.objectReferenceValue != null
-        )
+        if (property.propertyType == SerializedPropertyType.ObjectReference
+            && property.objectReferenceValue != null)
         {
             var data = (ScriptableObject)property.objectReferenceValue;
 
@@ -358,16 +336,13 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
                 GUI.Box(
                     new(
                         0,
-                        position.y
-                        + EditorGUIUtility.singleLineHeight
-                        + EditorGUIUtility.standardVerticalSpacing
-                        - 1,
-                        Screen.width,
-                        position.height
-                        - EditorGUIUtility.singleLineHeight
-                        - EditorGUIUtility.standardVerticalSpacing
-                    ),
-                    ""
+                        position.y + EditorGUIUtility.singleLineHeight
+                                   + EditorGUIUtility.standardVerticalSpacing
+                        - 1, Screen.width,
+                        position.height - EditorGUIUtility.singleLineHeight
+                                        - EditorGUIUtility
+                                            .standardVerticalSpacing
+                    ), ""
                 );
 
                 EditorGUI.indentLevel++;
@@ -375,10 +350,8 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
 
                 // Iterate over all the values and draw them
                 var prop = serializedObject.GetIterator();
-                var y =
-                    position.y
-                    + EditorGUIUtility.singleLineHeight
-                    + EditorGUIUtility.standardVerticalSpacing;
+                var y = position.y + EditorGUIUtility.singleLineHeight
+                                   + EditorGUIUtility.standardVerticalSpacing;
                 if (prop.NextVisible(true))
                 {
                     do
@@ -389,19 +362,13 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
                             continue;
                         }
                         var height = EditorGUI.GetPropertyHeight(
-                            prop,
-                            new(prop.displayName),
-                            true
+                            prop, new(prop.displayName), true
                         );
                         EditorGUI.PropertyField(
                             new(
-                                position.x,
-                                y,
-                                position.width - BUTTON_WIDTH,
+                                position.x, y, position.width - BUTTON_WIDTH,
                                 height
-                            ),
-                            prop,
-                            true
+                            ), prop, true
                         );
                         y += height + EditorGUIUtility.standardVerticalSpacing;
                     }
@@ -431,8 +398,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
                 }
 
                 property.objectReferenceValue = CreateAssetWithSavePrompt(
-                    type,
-                    selectedAssetPath
+                    type, selectedAssetPath
                 );
             }
         }
@@ -441,41 +407,26 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
     }
 
     public static T _GUILayout<T>(
-        string label,
-        T objectReferenceValue,
-        ref bool isExpanded
-    )
-        where T : ScriptableObject =>
-        _GUILayout(
-            new GUIContent(label),
-            objectReferenceValue,
-            ref isExpanded
-        );
+        string label, T objectReferenceValue, ref bool isExpanded
+    ) where T : ScriptableObject =>
+        _GUILayout(new GUIContent(label), objectReferenceValue, ref isExpanded);
 
     public static T _GUILayout<T>(
-        GUIContent label,
-        T objectReferenceValue,
-        ref bool isExpanded
-    )
-        where T : ScriptableObject
+        GUIContent label, T objectReferenceValue, ref bool isExpanded
+    ) where T : ScriptableObject
     {
         var position = EditorGUILayout.BeginVertical();
 
         var propertyRect = Rect.zero;
         var guiContent = label;
         var foldoutRect = new Rect(
-            position.x,
-            position.y,
-            EditorGUIUtility.labelWidth,
+            position.x, position.y, EditorGUIUtility.labelWidth,
             EditorGUIUtility.singleLineHeight
         );
         if (objectReferenceValue != null)
         {
             isExpanded = EditorGUI.Foldout(
-                foldoutRect,
-                isExpanded,
-                guiContent,
-                true
+                foldoutRect, isExpanded, guiContent, true
             );
 
             var indentedPosition = EditorGUI.IndentedRect(position);
@@ -496,11 +447,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             // throws off the controlID?
             foldoutRect.x += 12;
             EditorGUI.Foldout(
-                foldoutRect,
-                isExpanded,
-                guiContent,
-                true,
-                EditorStyles.label
+                foldoutRect, isExpanded, guiContent, true, EditorStyles.label
             );
 
             var indentedPosition = EditorGUI.IndentedRect(position);
@@ -508,22 +455,15 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             propertyRect = new(
                 position.x + EditorGUIUtility.labelWidth - indentOffset,
                 position.y,
-                position.width
-                - EditorGUIUtility.labelWidth
-                - indentOffset
-                - 60,
-                EditorGUIUtility.singleLineHeight
+                position.width - EditorGUIUtility.labelWidth - indentOffset
+                - 60, EditorGUIUtility.singleLineHeight
             );
         }
 
         EditorGUILayout.BeginHorizontal();
-        objectReferenceValue =
-            EditorGUILayout.ObjectField(
-                new GUIContent(" "),
-                objectReferenceValue,
-                typeof(T),
-                false
-            ) as T;
+        objectReferenceValue = EditorGUILayout.ObjectField(
+            new GUIContent(" "), objectReferenceValue, typeof(T), false
+        ) as T;
 
         if (objectReferenceValue != null)
         {
@@ -539,8 +479,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             {
                 var selectedAssetPath = "Assets";
                 var newAsset = CreateAssetWithSavePrompt(
-                    typeof(T),
-                    selectedAssetPath
+                    typeof(T), selectedAssetPath
                 );
                 if (newAsset != null)
                 {
@@ -555,8 +494,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
 
     private static void DrawScriptableObjectChildFields<T>(
         T objectReferenceValue
-    )
-        where T : ScriptableObject
+    ) where T : ScriptableObject
     {
         // Draw a background that shows us clearly which fields are part of the
         // ScriptableObject
@@ -589,29 +527,21 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
     }
 
     public static T DrawScriptableObjectField<T>(
-        GUIContent label,
-        T objectReferenceValue,
-        ref bool isExpanded
-    )
-        where T : ScriptableObject
+        GUIContent label, T objectReferenceValue, ref bool isExpanded
+    ) where T : ScriptableObject
     {
         var position = EditorGUILayout.BeginVertical();
 
         var propertyRect = Rect.zero;
         var guiContent = label;
         var foldoutRect = new Rect(
-            position.x,
-            position.y,
-            EditorGUIUtility.labelWidth,
+            position.x, position.y, EditorGUIUtility.labelWidth,
             EditorGUIUtility.singleLineHeight
         );
         if (objectReferenceValue != null)
         {
             isExpanded = EditorGUI.Foldout(
-                foldoutRect,
-                isExpanded,
-                guiContent,
-                true
+                foldoutRect, isExpanded, guiContent, true
             );
 
             var indentedPosition = EditorGUI.IndentedRect(position);
@@ -632,11 +562,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             // throws off the controlID?
             foldoutRect.x += 120;
             EditorGUI.Foldout(
-                foldoutRect,
-                isExpanded,
-                guiContent,
-                true,
-                EditorStyles.label
+                foldoutRect, isExpanded, guiContent, true, EditorStyles.label
             );
 
             var indentedPosition = EditorGUI.IndentedRect(position);
@@ -644,22 +570,15 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             propertyRect = new(
                 position.x + EditorGUIUtility.labelWidth - indentOffset,
                 position.y,
-                position.width
-                - EditorGUIUtility.labelWidth
-                - indentOffset
-                - 600,
-                EditorGUIUtility.singleLineHeight
+                position.width - EditorGUIUtility.labelWidth - indentOffset
+                - 600, EditorGUIUtility.singleLineHeight
             );
         }
 
         EditorGUILayout.BeginHorizontal();
-        objectReferenceValue =
-            EditorGUILayout.ObjectField(
-                new GUIContent(" "),
-                objectReferenceValue,
-                typeof(T),
-                false
-            ) as T;
+        objectReferenceValue = EditorGUILayout.ObjectField(
+            new GUIContent(" "), objectReferenceValue, typeof(T), false
+        ) as T;
 
         if (objectReferenceValue != null)
         {
@@ -672,8 +591,7 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
             {
                 var selectedAssetPath = "Assets";
                 var newAsset = CreateAssetWithSavePrompt(
-                    typeof(T),
-                    selectedAssetPath
+                    typeof(T), selectedAssetPath
                 );
                 if (newAsset != null)
                 {
@@ -692,11 +610,8 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
     )
     {
         path = EditorUtility.SaveFilePanelInProject(
-            "Save ScriptableObject",
-            type.Name + ".asset",
-            "asset",
-            "Enter a file name for the ScriptableObject.",
-            path
+            "Save ScriptableObject", type.Name + ".asset", "asset",
+            "Enter a file name for the ScriptableObject.", path
         );
         if (path == "")
         {
@@ -718,10 +633,8 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
         {
             type = type.GetElementType();
         }
-        else if (
-            type.IsGenericType
-            && type.GetGenericTypeDefinition() == typeof(List<>)
-        )
+        else if (type.IsGenericType
+                 && type.GetGenericTypeDefinition() == typeof(List<>))
         {
             type = type.GetGenericArguments()[0];
         }

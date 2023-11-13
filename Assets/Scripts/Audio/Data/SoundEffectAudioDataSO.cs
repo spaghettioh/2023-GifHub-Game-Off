@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,22 +5,23 @@ using UnityEngine;
 public class SoundEffectAudioDataSO : AudioDataBase
 {
     /// <summary>
-    /// The list of clips in the asset
+    ///     The list of clips in the asset
     /// </summary>
     [field: SerializeField]
     public List<AudioClip> SoundFX { get; private set; }
 
     /// <summary>
-    /// The AudioSetting for playback in the asset
+    ///     The AudioSetting for playback in the asset
     /// </summary>
     [field: SerializeField]
     public AudioPlaybackSetting Setting { get; private set; }
 
     /// <summary>
-    /// The amount of randomness to vary playback of the sound
+    ///     The amount of randomness to vary playback of the sound
     /// </summary>
     [Tooltip("Variation in pitch for each playback.")]
-    [field: SerializeField, Range(0, 1)]
+    [field: SerializeField]
+    [field: Range(0, 1)]
     public float PitchVariation { get; private set; }
 
     [field: SerializeField]
@@ -44,15 +43,11 @@ public class SoundEffectAudioDataSO : AudioDataBase
     {
         if (Setting == AudioPlaybackSetting.CarStartup && SoundFX.Count != 2)
         {
-            throw new Exception(
-                $"{name} : {Setting} must have exactly 2 clips."
-            );
+            throw new($"{name} : {Setting} must have exactly 2 clips.");
         }
         if (Setting == AudioPlaybackSetting.StartLoopStop && SoundFX.Count != 3)
         {
-            throw new Exception(
-                $"{name} : {Setting} must have exactly 3 clips."
-            );
+            throw new($"{name} : {Setting} must have exactly 3 clips.");
         }
     }
 }

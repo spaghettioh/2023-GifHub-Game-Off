@@ -1,55 +1,15 @@
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
 
-[CreateAssetMenu(
-    fileName = "InputHandler", menuName = "Runtime/Input/Input handler"
-)]
+[CreateAssetMenu(fileName = "InputEvent", menuName = "Events/Input event")]
 public class InputEventSO : ScriptableObject
 {
-    private GameInput _gameInput;
-    public ClumpInputHandler Clump;
-    public MapInputHandler Map;
-    public UIInputHandler UI;
-    private InputControlScheme _controlScheme;
-    public bool IsGamepad => _controlScheme == _gameInput.GamepadScheme;
-    public bool IsKeyboardMouse =>
-        _controlScheme == _gameInput.KeyboardMouseScheme;
+    public event Action<Vector2> OnDirectionalInput;
+    public Vector2 DirectionalInput;
 
-    public void EnableAtlas() => Clump.Enable();
-
-    public void EnableUI() => UI.Enable();
-
-    public void EnableMap() => Map.Enable();
-
-    public void DisableAllInput()
+    public void SetDirectionalInput(Vector2 input, string elevator)
     {
-        Clump.Disable();
-        Map.Disable();
-        UI.Disable();
-    }
-
-    private void OnEnable()
-    {
-        if (_gameInput != null)
-        {
-            return;
-        }
-
-        _gameInput = new();
-        Clump = new(_gameInput);
-        Map = new(_gameInput);
-        UI = new(_gameInput);
-    }
-
-    public void OnInputDeviceChanged(
-        InputUser user, InputUserChange change, InputDevice device
-    )
-    {
-        // BUG only works when its different
-        if (change == InputUserChange.ControlSchemeChanged)
-        {
-            _controlScheme = user.controlScheme.Value;
-        }
+        OnDirectionalInput.CheckSubscriptions(input, elevator);
+        DirectionalInput = input;
     }
 }

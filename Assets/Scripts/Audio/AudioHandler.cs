@@ -136,9 +136,7 @@ public class AudioHandler : MonoBehaviour
     }
 
     public List<float> RampVolume(
-        float startVolume,
-        float targetVolume,
-        float duration
+        float startVolume, float targetVolume, float duration
     )
     {
         List<float> currentVolumes = new();
@@ -243,9 +241,7 @@ public class AudioHandler : MonoBehaviour
                 break;
 
             case AudioPlaybackSetting.AllShuffleRepeat:
-                StartCoroutine(
-                    PlayAllRoutine(sfx, true, true)
-                );
+                StartCoroutine(PlayAllRoutine(sfx, true, true));
                 break;
 
             case AudioPlaybackSetting.AllAtOnce:
@@ -340,9 +336,7 @@ public class AudioHandler : MonoBehaviour
     }
 
     private IEnumerator PlayAllRoutine(
-        SoundEffectAudioDataSO sfx,
-        bool shuffle = false,
-        bool repeat = false,
+        SoundEffectAudioDataSO sfx, bool shuffle = false, bool repeat = false,
         bool fade = false
     )
     {
@@ -403,9 +397,7 @@ public class AudioHandler : MonoBehaviour
     }
 
     private void PlayRandom(
-        SoundEffectAudioDataSO sfx,
-        bool repeat = false,
-        bool fade = false
+        SoundEffectAudioDataSO sfx, bool repeat = false, bool fade = false
     )
     {
         SetClip(sfx.SoundFX.Random());
@@ -430,9 +422,9 @@ public class AudioHandler : MonoBehaviour
 
     private IEnumerator WrapItUp(float duration)
     {
-        yield return _useUnscaledTime
-            ? new WaitForSecondsRealtime(duration)
-            : new WaitForSeconds(duration);
+        yield return _useUnscaledTime ?
+            new WaitForSecondsRealtime(duration) :
+            new WaitForSeconds(duration);
         Reset();
     }
 }

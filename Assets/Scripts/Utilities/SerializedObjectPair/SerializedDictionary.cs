@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Runtime.Serialization;
 
-[System.Serializable]
+[Serializable]
 public class SerializedDictionary<T1, T2>
 {
     public SerializedDictionary()
@@ -27,13 +25,15 @@ public class SerializedDictionary<T1, T2>
 
     public T1 GetKey(T2 value)
     {
-        var pair = _pairs.Find(pair => pair.Value.Equals(value));
+        SerializedDictionaryObject<T1, T2> pair =
+            _pairs.Find(pair => pair.Value.Equals(value));
         return pair.Key;
     }
 
     public T2 GetValue(T1 key)
     {
-        var pair = _pairs.Find(pair => pair.Key.Equals(key));
+        SerializedDictionaryObject<T1, T2> pair =
+            _pairs.Find(pair => pair.Key.Equals(key));
         return pair.Value;
     }
 
@@ -44,10 +44,10 @@ public class SerializedDictionary<T1, T2>
 
     public void Add(T1 key, T2 value)
     {
-        _pairs.Add(new SerializedDictionaryObject<T1, T2>(key, value));
+        _pairs.Add(new(key, value));
     }
 
-    [System.Serializable]
+    [Serializable]
     public class SerializedDictionaryObject<T3, T4>
     {
         public SerializedDictionaryObject(T3 key, T4 value)

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,17 +10,17 @@ public class LootCollectTest : MonoBehaviour
     public float _moveSpeed;
     public float distancer = 2f;
     public float _drag;
-    public bool dragIncrease = false;
+    public bool dragIncrease;
     public float _maxRange;
     public ForceMode mode = ForceMode.Force;
 
-    List<Rigidbody> spawned = new();
+    private readonly List<Rigidbody> spawned = new();
     public float timeScale;
 
-    Vector3 lootSpawnPosition = new();
+    private Vector3 lootSpawnPosition;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Spawn();
         var shape = particle.shape;
@@ -33,11 +32,11 @@ public class LootCollectTest : MonoBehaviour
     {
         transform.position = _target.position;
         var shape = particle.shape;
-        shape.position = (lootSpawnPosition - _target.position);
+        shape.position = lootSpawnPosition - _target.position;
         Time.timeScale = timeScale;
         for (var i = spawned.Count - 1; i > 0; i--)
         {
-            var target = _target.position + (Vector3.forward * 2);
+            var target = _target.position + Vector3.forward * 2;
             var position = spawned[i].transform.position;
             var direction = target - position;
             var distance = direction.magnitude;
@@ -52,16 +51,11 @@ public class LootCollectTest : MonoBehaviour
                 spawned[i].drag = _drag;
             }
 
-            float distanceScale = Mathf.InverseLerp(_maxRange, 0f, distance);
-            float attractionStrength = Mathf.Lerp(
-                0f,
-                _moveSpeed,
-                distanceScale
-            );
+            var distanceScale = Mathf.InverseLerp(_maxRange, 0f, distance);
+            var attractionStrength = Mathf.Lerp(0f, _moveSpeed, distanceScale);
 
             spawned[i].AddForce(
-                direction.normalized * attractionStrength,
-                mode
+                direction.normalized * attractionStrength, mode
             );
 
             if (distance < 2)

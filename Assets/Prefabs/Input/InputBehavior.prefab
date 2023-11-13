@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117b13625e4ea4fd79ca06d14562c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputHandler: {fileID: 11400000, guid: f139fb26238454f60800f57569893f91, type: 2}
+  _inputEvent: {fileID: 11400000, guid: 0f7da7219356342e8b877ac6701cbe34, type: 2}
 --- !u!114 &4086964831866223251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 911dc67769871476099d06e6c07c0571, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: fb38cb6eb651549d0bb55ed57dce1f40,
+    type: 3}
   m_NotificationBehavior: 1
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -73,6 +74,6 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Atlas
+  m_DefaultActionMap: Clump
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

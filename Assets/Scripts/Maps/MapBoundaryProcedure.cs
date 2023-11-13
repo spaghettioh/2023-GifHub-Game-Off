@@ -6,14 +6,17 @@ using UnityEngine;
 [Serializable]
 public class MapBoundaryProcedure
 {
-    [Tooltip("Center e.g. Vector3(200,1100,600)"), SerializeField]
+    [Tooltip("Center e.g. Vector3(200,1100,600)")]
+    [SerializeField]
     private float _centerY = 1100f;
 
-    [Tooltip("Overall size e.g. Vector3(1600,1800,2000)"), SerializeField]
+    [Tooltip("Overall size e.g. Vector3(1600,1800,2000)")]
+    [SerializeField]
     private float _height = 1800f;
 
-    [Tooltip("Additional % to pad the edges of the boundary around the stage"),
-     Range(0, 1), SerializeField]
+    [Tooltip("Additional % to pad the edges of the boundary around the stage")]
+    [Range(0, 1)]
+    [SerializeField]
     private float _padding;
 
     /// <summary>

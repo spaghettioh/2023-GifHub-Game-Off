@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-[System.Serializable]
+[Serializable]
 public class QuitTab : PauseTab
 {
     [SerializeField]

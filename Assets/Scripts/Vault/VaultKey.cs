@@ -13,23 +13,13 @@ public struct VaultKey
         Owner = owner;
     }
 
-    public override bool Equals(Object obj)
-    {
-        return obj is VaultKey x && Id == x.Id && Owner == x.Owner;
-    }
+    public override bool Equals(object obj) =>
+        obj is VaultKey x && Id == x.Id && Owner == x.Owner;
 
-    public override int GetHashCode()
-    {
-        return Id.GetHashCode() ^ Owner.GetHashCode();
-    }
+    public override int GetHashCode() => Id.GetHashCode() ^ Owner.GetHashCode();
 
-    public static bool operator ==(VaultKey x, VaultKey y)
-    {
-        return x.Id == y.Id && x.Owner == y.Owner;
-    }
+    public static bool operator ==(VaultKey x, VaultKey y) =>
+        x.Id == y.Id && x.Owner == y.Owner;
 
-    public static bool operator !=(VaultKey x, VaultKey y)
-    {
-        return !(x == y);
-    }
+    public static bool operator !=(VaultKey x, VaultKey y) => !(x == y);
 }

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public abstract class ComponentListPool<T> : PoolBase<T, Transform>
     where T : Component
@@ -36,12 +33,14 @@ public abstract class ComponentListPool<T> : PoolBase<T, Transform>
     }
 
     /// <summary>
-    /// Instantiates an object and adds it to the pool
+    ///     Instantiates an object and adds it to the pool
     /// </summary>
-    /// <returns>An object</returns>
+    /// <returns>
+    ///     An object
+    /// </returns>
     protected override T Create()
     {
-        T t = Instantiate(Object, _parent);
+        var t = Instantiate(Object, _parent);
         t.gameObject.SetActive(false);
 
         return t;

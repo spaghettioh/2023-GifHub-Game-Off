@@ -4,8 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Score", menuName = "Game Off/Score")]
 public class ScoreSO : ScriptableObject
 {
-    [field: SerializeField] public int TotalScore { get; private set; }
-    [field: SerializeField] public float TotalTime { get; private set; }
+    [field: SerializeField]
+    public int TotalScore { get; private set; }
+    [field: SerializeField]
+    public float TotalTime { get; private set; }
     [field: SerializeField]
     public float ThisLevelTimer { get; private set; }
     [field: SerializeField]

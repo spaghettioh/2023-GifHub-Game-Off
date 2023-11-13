@@ -19,8 +19,7 @@ public class VFXHandler : MonoBehaviour
     private void Awake()
     {
         TryGetComponent(out _t);
-        VFXComponent[] effects =
-            GetComponentsInChildren<VFXComponent>(true);
+        VFXComponent[] effects = GetComponentsInChildren<VFXComponent>(true);
         _fxObjects = effects.ToDictionary(vfx => vfx.Type, vfx => vfx);
     }
 

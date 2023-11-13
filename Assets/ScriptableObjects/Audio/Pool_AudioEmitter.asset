@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pool_AudioEmitter
   m_EditorClassIdentifier: 
   Object: {fileID: 6200562360653130507, guid: 1700ec27fcf8849a38abdf42fc1b0f8b, type: 3}
-  _poolSize: 100
+  _poolSize: 10

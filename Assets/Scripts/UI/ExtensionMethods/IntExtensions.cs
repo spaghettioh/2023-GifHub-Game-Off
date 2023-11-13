@@ -5,9 +5,11 @@ public static class IntExtensions
         const int min = 0;
         const int max = 50;
         if (level is < min or > max)
-            throw new (
+        {
+            throw new(
                 $"Input level ({level}) outside compatible range: {min}-{max}"
             );
+        }
         return level switch
         {
             < 1 => string.Empty,

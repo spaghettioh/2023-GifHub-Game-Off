@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RunTimerHUDManager : HUDManager
@@ -13,8 +11,7 @@ public class RunTimerHUDManager : HUDManager
     [SerializeField]
     private HUDCounter _seconds;
     [Header("Listening for...")]
-
-    private bool _timerIsRunning = false;
+    private bool _timerIsRunning;
     private float _timeElapsed;
 
     private void Start()

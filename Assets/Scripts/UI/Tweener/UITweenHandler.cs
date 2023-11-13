@@ -18,16 +18,14 @@ public class UITweenHandler : MonoBehaviour
     public UITweenHandler DoPath(List<Vector3> path, float duration)
     {
         _t.DOPath(path.ToArray(), duration, PathType.CatmullRom)
-            .OnUpdate(() => this.OnUpdate())
-            .OnComplete(() => this.OnComplete())
+            .OnUpdate(() => this.OnUpdate()).OnComplete(() => this.OnComplete())
             .SetEase(Ease.OutCubic);
         return this;
     }
 
     public UITweenHandler DoScale(Vector3 endScale, float duration)
     {
-        _t.DOScale(endScale, duration / 4f)
-            .OnUpdate(() => this.OnUpdate())
+        _t.DOScale(endScale, duration / 4f).OnUpdate(() => this.OnUpdate())
             .OnComplete(() => this.OnComplete());
         return this;
     }

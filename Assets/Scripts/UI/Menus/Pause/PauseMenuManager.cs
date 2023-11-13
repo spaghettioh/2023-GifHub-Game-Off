@@ -36,7 +36,7 @@ public class PauseMenuManager : MenuUI
     private SceneReferenceSO _reloadScene;
 
     private VisualElement _highlight;
-    
+
     protected override void OnAwake()
     {
         _highlight = _Root.GetElement(_tabHighlightId);
@@ -44,14 +44,14 @@ public class PauseMenuManager : MenuUI
         _optionsTab.Initialize(_Root, _restartTab, _resumeTab);
         _restartTab.Initialize(_Root, _quitTab, _optionsTab);
         _quitTab.Initialize(_Root, _quitTab, _restartTab);
-        
+
         var inventory = _Root.GetElement("c_inventory");
     }
 
     protected override void OnMenuEnable()
     {
-        _Input.Clump.OnPauseInput += HandlePauseInput;
-        _Input.UI.OnUnpauseInput += HandleUnpauseInput;
+        // _Input.Clump.OnPauseInput += HandlePauseInput;
+        // _Input.UI.OnUnpauseInput += HandleUnpauseInput;
         _resumeTab.OnTabCancel += HandleUnpauseInput;
         _optionsTab.OnTabCancel += HandleUnpauseInput;
         _restartTab.OnTabCancel += HandleUnpauseInput;
@@ -61,8 +61,8 @@ public class PauseMenuManager : MenuUI
 
     protected override void OnMenuDisable()
     {
-        _Input.Clump.OnPauseInput -= HandlePauseInput;
-        _Input.UI.OnUnpauseInput -= HandleUnpauseInput;
+        // _Input.Clump.OnPauseInput -= HandlePauseInput;
+        // _Input.UI.OnUnpauseInput -= HandleUnpauseInput;
         _resumeTab.OnTabCancel -= HandleUnpauseInput;
         _optionsTab.OnTabCancel -= HandleUnpauseInput;
         _restartTab.OnTabCancel -= HandleUnpauseInput;
@@ -116,18 +116,12 @@ public class PauseMenuManager : MenuUI
 
     protected override void HandleSwapSkills()
     {
-        if (_currentTab._IsOpen)
-        {
-            return;
-        }
+        if (_currentTab._IsOpen) { }
     }
 
     protected override void HandleSwapWeapons()
     {
-        if (_currentTab._IsOpen)
-        {
-            return;
-        }
+        if (_currentTab._IsOpen) { }
     }
 
     private void PlaySwapGearSound() => PlaySound(_swapGearSound);

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,9 +22,7 @@ public abstract class PauseTab
     public bool _IsOpen { get; protected set; }
 
     internal virtual void Initialize(
-        VisualElement root,
-        PauseTab nextTab,
-        PauseTab previousTab
+        VisualElement root, PauseTab nextTab, PauseTab previousTab
     )
     {
         Root = root;
@@ -46,8 +42,7 @@ public abstract class PauseTab
     public virtual void HandleCursorMoveRight() { }
 
     public virtual PauseTab MoveTabHighlight(
-        VisualElement highlight,
-        bool isNext
+        VisualElement highlight, bool isNext
     )
     {
         var target = isNext ? NextTab : PreviousTab;

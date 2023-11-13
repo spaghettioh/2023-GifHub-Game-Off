@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public abstract class SpawnPoint<T> : MonoBehaviour
-    where T : Component
+public abstract class SpawnPoint<T> : MonoBehaviour where T : Component
 {
     [SerializeField]
     private T _prefab;

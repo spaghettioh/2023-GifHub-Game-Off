@@ -3,17 +3,26 @@ using UnityEngine;
 
 public class DeviceOrientationManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _scrim;
-    [SerializeField] private GameObject _mobileSpriteWrong;
-    [SerializeField] private GameObject _mobileSpriteRight;
-    [SerializeField] private float _blinkTime;
-    [SerializeField] private AudioEventSO _audioEvent;
-    [SerializeField] private VoidEventSO _sceneLoaded;
+    [SerializeField]
+    private GameObject _scrim;
+    [SerializeField]
+    private GameObject _mobileSpriteWrong;
+    [SerializeField]
+    private GameObject _mobileSpriteRight;
+    [SerializeField]
+    private float _blinkTime;
+    [SerializeField]
+    private AudioEventSO _audioEvent;
+    [SerializeField]
+    private VoidEventSO _sceneLoaded;
 
     [Header("DEBUG ==========")]
-    [SerializeField] private bool _isOrientationCorrect;
-    [SerializeField] private bool _isShowingScrim;
-    [SerializeField] private bool _isSceneLoaded;
+    [SerializeField]
+    private bool _isOrientationCorrect;
+    [SerializeField]
+    private bool _isShowingScrim;
+    [SerializeField]
+    private bool _isSceneLoaded;
 
     private void OnEnable()
     {
@@ -25,7 +34,7 @@ public class DeviceOrientationManager : MonoBehaviour
         _sceneLoaded.OnEventRaised -= SetSceneLoaded;
     }
 
-    private void SetSceneLoaded() =>_isSceneLoaded = true;
+    private void SetSceneLoaded() => _isSceneLoaded = true;
 
     private void Start()
     {

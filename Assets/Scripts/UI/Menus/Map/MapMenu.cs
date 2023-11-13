@@ -23,14 +23,14 @@ public class MapMenu : MenuUI
 
     protected override void OnMenuEnable()
     {
-        _Input.Clump.OnOpenMapInput += HandleOpenMap;
-        _Input.Map.OnCloseMapInput += HandleCloseMap;
+        // _Input.Clump.OnPauseInput += HandleOpenMap;
+        // _Input.Map.OnCloseMapInput += HandleCloseMap;
     }
 
     protected override void OnMenuDisable()
     {
-        _Input.Clump.OnOpenMapInput -= HandleOpenMap;
-        _Input.Map.OnCloseMapInput -= HandleCloseMap;
+        // _Input.Clump.OnPauseInput -= HandleOpenMap;
+        // _Input.Map.OnCloseMapInput -= HandleCloseMap;
     }
 
     protected override void OnUIStart()
@@ -51,7 +51,7 @@ public class MapMenu : MenuUI
         // }
         OpenMenu();
         _isOpen = true;
-        _Input.EnableMap();
+        // _Input.EnableMap();
     }
 
     private void HandleCloseMap()

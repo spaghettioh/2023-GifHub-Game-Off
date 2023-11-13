@@ -3,13 +3,13 @@ using UnityEngine;
 public abstract class AudioDataBase : ScriptableObject
 {
     /// <summary>
-    /// The type of audio stored in this cue.
+    ///     The type of audio stored in this cue.
     /// </summary>
     [field: SerializeField]
     public AudioType Type { get; private set; }
 
     /// <summary>
-    /// The priority of the audio stored when it's played.
+    ///     The priority of the audio stored when it's played.
     /// </summary>
     [SerializeField]
     private bool _priority;

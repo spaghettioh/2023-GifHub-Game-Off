@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class InteractableManager : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class InteractableManager : MonoBehaviour
 
     [SerializeField]
     private InputEventSO _inputEvent;
-    
+
     [SerializeField]
     private TransformAnchorSO _transformAnchor;
 
@@ -36,8 +35,6 @@ public class InteractableManager : MonoBehaviour
 
         _interactableRangeEvent.OnEnterRange += HandleEnterInteractableRange;
         _interactableRangeEvent.OnExitRange += HandleExitInteractableRange;
-
-        _inputEvent.Clump.OnInteractInput += HandleInteractInput;
     }
 
     private void OnDisable()
@@ -47,8 +44,6 @@ public class InteractableManager : MonoBehaviour
 
         _interactableRangeEvent.OnEnterRange -= HandleEnterInteractableRange;
         _interactableRangeEvent.OnExitRange -= HandleExitInteractableRange;
-
-        _inputEvent.Clump.OnInteractInput -= HandleInteractInput;
     }
 
     private void Update()

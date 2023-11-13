@@ -41,7 +41,7 @@ Material:
     - _AspectRatioWidth: 16
     - _AspectRationHeight: 9
     - _PPU: 4
-    - _VerticalResolution: 240
+    - _VerticalResolution: 480
     m_Colors:
     - _AspectRatio: {r: 16, g: 9, b: 0, a: 0}
     - _Resolution: {r: 640, g: 360, b: 0, a: 0}

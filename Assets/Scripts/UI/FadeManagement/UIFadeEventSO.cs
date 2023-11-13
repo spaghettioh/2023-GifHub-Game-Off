@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "Event_UIFade", menuName = "Events/UI/Fade event")]
 public class UIFadeEventSO : ScriptableObject
@@ -8,8 +6,7 @@ public class UIFadeEventSO : ScriptableObject
     public event FadeInAction<IUIFadable> OnFadeIn;
     public event FadeOutAction<IUIFadable> OnFadeOut;
 
-    public void FadeIn<T>(string elevator = "Unknown")
-        where T : IUIFadable
+    public void FadeIn<T>(string elevator = "Unknown") where T : IUIFadable
     {
         //         if (OnFadeIn != null)
         //         {
@@ -25,8 +22,7 @@ public class UIFadeEventSO : ScriptableObject
         // #endif
     }
 
-    public void FadeOut<T>(string elevator = "Unknown")
-        where T : IUIFadable
+    public void FadeOut<T>(string elevator = "Unknown") where T : IUIFadable
     {
         //         if (OnFadeOut != null)
         //         {

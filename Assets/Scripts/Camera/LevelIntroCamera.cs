@@ -1,28 +1,39 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cinemachine;
+using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class LevelIntroCamera : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private float _waitTime;
-    [SerializeField] private float _zoomTime;
-    [SerializeField] private int _startingPPU;
-    [SerializeField] private int _endingPPU;
-    [SerializeField] private PixelPerfectCamera _pixelPerfectCamera;
-    [SerializeField] private CinemachineBrain _cinemachineBrain;
-    [SerializeField] private CinemachineVirtualCamera _levelCamera;
-    [SerializeField] private CinemachineVirtualCamera _clumpPositionCamera;
-    [SerializeField] private CinemachineVirtualCamera _clumpFollowCamera;
+    [SerializeField]
+    private float _waitTime;
+    [SerializeField]
+    private float _zoomTime;
+    [SerializeField]
+    private int _startingPPU;
+    [SerializeField]
+    private int _endingPPU;
+    [SerializeField]
+    private PixelPerfectCamera _pixelPerfectCamera;
+    [SerializeField]
+    private CinemachineBrain _cinemachineBrain;
+    [SerializeField]
+    private CinemachineVirtualCamera _levelCamera;
+    [SerializeField]
+    private CinemachineVirtualCamera _clumpPositionCamera;
+    [SerializeField]
+    private CinemachineVirtualCamera _clumpFollowCamera;
 
     [Header("Listening for...")]
-    [SerializeField] private VoidEventSO _sceneLoaded;
-    [SerializeField] private VoidEventSO _curtainsOpened;
+    [SerializeField]
+    private VoidEventSO _sceneLoaded;
+    [SerializeField]
+    private VoidEventSO _curtainsOpened;
 
     [Header("Broadcasting to...")]
-    [SerializeField] private VoidEventSO _zoomFinished;
+    [SerializeField]
+    private VoidEventSO _zoomFinished;
 
     private void OnEnable()
     {
@@ -46,7 +57,6 @@ public class LevelIntroCamera : MonoBehaviour
         _clumpFollowCamera.Priority = 0;
     }
 
-
     private void StartZoom()
     {
         Debug.Log($"{name} start zoom {Time.time}");
@@ -54,13 +64,13 @@ public class LevelIntroCamera : MonoBehaviour
         StartCoroutine(StartZoomRoutine());
     }
 
-    float timeWaited;
-    bool canWait;
-    bool canZoom;
-    bool zoomDone;
-    float lerpTime;
-    float moveTimeX;
-    float moveTimeZ;
+    private float timeWaited;
+    private bool canWait;
+    private bool canZoom;
+    private bool zoomDone;
+    private float lerpTime;
+    private float moveTimeX;
+    private float moveTimeZ;
 
     //private void FixedUpdate()
     //{
@@ -114,7 +124,6 @@ public class LevelIntroCamera : MonoBehaviour
     //    }
     //}
 
-
     //private void StartZoom() => StartCoroutine(StartZoomRoutine());
     private IEnumerator StartZoomRoutine()
     {
@@ -131,8 +140,9 @@ public class LevelIntroCamera : MonoBehaviour
         while (lerpTime < _zoomTime)
         {
             Debug.Log($"Blend duration {lerpTime / _zoomTime}");
-            _pixelPerfectCamera.assetsPPU =
-                (int)Mathf.Lerp(_startingPPU, _endingPPU, lerpTime / _zoomTime);
+            _pixelPerfectCamera.assetsPPU = (int)Mathf.Lerp(
+                _startingPPU, _endingPPU, lerpTime / _zoomTime
+            );
             lerpTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }

@@ -1,8 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(
-    menuName = "Audio/Audio Emitter Pool",
-    fileName = "AudioEmitterPool"
+    menuName = "Audio/Audio Emitter Pool", fileName = "AudioEmitterPool"
 )]
 public class AudioHandlerPoolSO : ComponentPool<AudioHandler>
 {

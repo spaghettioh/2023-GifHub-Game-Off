@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private ClumpDataSO _clumpData;
-    [SerializeField] private Transform _t;
+    [SerializeField]
+    private ClumpRuntimeDataSO _clumpData;
+    [SerializeField]
+    private Transform _t;
 
     private void Update()
     {
@@ -18,6 +20,8 @@ public class CameraFollow : MonoBehaviour
     private void OnValidate()
     {
         if (gameObject.activeInHierarchy)
+        {
             SetPosition();
+        }
     }
 }

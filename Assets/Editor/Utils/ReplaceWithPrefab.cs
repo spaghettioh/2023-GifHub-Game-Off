@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 public class ReplaceWithPrefab : EditorWindow
 {
@@ -14,17 +14,13 @@ public class ReplaceWithPrefab : EditorWindow
 
     private void OnGUI()
     {
-        _prefab = (GameObject)
-            EditorGUILayout.ObjectField(
-                "Prefab",
-                _prefab,
-                typeof(GameObject),
-                false
-            );
+        _prefab = (GameObject)EditorGUILayout.ObjectField(
+            "Prefab", _prefab, typeof(GameObject), false
+        );
 
         if (GUILayout.Button($"Replace {Selection.objects.Length} object(s)"))
         {
-            var selection = Selection.gameObjects;
+            GameObject[] selection = Selection.gameObjects;
 
             for (var i = selection.Length - 1; i >= 0; --i)
             {
@@ -32,8 +28,8 @@ public class ReplaceWithPrefab : EditorWindow
                 var prefabType = PrefabUtility.GetPrefabAssetType(_prefab);
                 GameObject newObject;
 
-                newObject = (GameObject)
-                    PrefabUtility.InstantiatePrefab(_prefab);
+                newObject =
+                    (GameObject)PrefabUtility.InstantiatePrefab(_prefab);
 
                 if (newObject == null)
                 {
@@ -42,16 +38,13 @@ public class ReplaceWithPrefab : EditorWindow
                 }
 
                 Undo.RegisterCreatedObjectUndo(
-                    newObject,
-                    "Replace with prefab"
+                    newObject, "Replace with prefab"
                 );
                 newObject.transform.parent = selected.transform.parent;
                 newObject.transform.localPosition = selected
-                    .transform
-                    .localPosition;
+                    .transform.localPosition;
                 newObject.transform.localRotation = selected
-                    .transform
-                    .localRotation;
+                    .transform.localRotation;
                 newObject.transform.localScale = selected.transform.localScale;
                 newObject.transform.SetSiblingIndex(
                     selected.transform.GetSiblingIndex()

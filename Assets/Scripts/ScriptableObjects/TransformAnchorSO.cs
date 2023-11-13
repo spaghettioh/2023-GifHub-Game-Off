@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(
-    menuName = "Runtime/Transform anchor",
-    fileName = "Transform_NAME"
+    menuName = "Runtime/Transform anchor", fileName = "Transform_NAME"
 )]
 public class TransformAnchorSO : ScriptableObject
 {

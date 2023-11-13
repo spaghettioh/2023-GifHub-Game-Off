@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [Header("Listening to..."), SerializeField]
+    [Header("Listening to...")]
+    [SerializeField]
     private IntEventSO _stageGenerated;
 
     private void OnEnable() =>

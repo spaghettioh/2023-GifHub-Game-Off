@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea1c5b43aec046aea284b6715683b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioEmitterPool: {fileID: 11400000, guid: 48007313991de4c9ca658111a27dd61d, type: 2}
-  _poolSize: 10
-  _audioEvent: {fileID: 11400000, guid: 7e2b2ca9f985f46a8b9a7f2565a280e4, type: 2}
+  _audioHandlerPool: {fileID: 11400000, guid: 4e65d510f400645a9880634b01351c64, type: 2}
+  _audioEvent: {fileID: 11400000, guid: 22ac2367433de4cbf9f5cdd8aa106ab3, type: 2}

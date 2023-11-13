@@ -1,6 +1,4 @@
 using System;
-using Nerdscape.Events;
-using Nerdscape.Events.Logging;
 using UnityEngine;
 
 [CreateAssetMenu(

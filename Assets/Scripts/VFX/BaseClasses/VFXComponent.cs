@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.VFX;
 
 public class VFXComponent : MonoBehaviour
@@ -23,7 +22,9 @@ public class VFXComponent : MonoBehaviour
         TryGetComponent(out _T);
         TryGetComponent(out _visualEffect);
     }
-    public IEnumerator VisualEffectRoutine(VFXType vfxType, Transform targetTransform)
+    public IEnumerator VisualEffectRoutine(
+        VFXType vfxType, Transform targetTransform
+    )
     {
         VisualEffect.Play();
         yield return new WaitForSeconds(.1f);

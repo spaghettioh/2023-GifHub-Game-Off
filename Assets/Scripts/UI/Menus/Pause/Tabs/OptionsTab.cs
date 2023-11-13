@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
+using System;
 
-[System.Serializable]
+[Serializable]
 public class OptionsTab : PauseTab
 {
     public override void HandleCursorCancel()
@@ -19,7 +16,9 @@ public class OptionsTab : PauseTab
     public override void HandleCursorSelect()
     {
         if (_IsOpen)
+        {
             return;
+        }
 
         OpenScreen();
     }

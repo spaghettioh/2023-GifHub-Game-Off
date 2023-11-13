@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class ClumpSpawner : SpawnPoint<ClumpController>
+public class ClumpSpawner : SpawnPoint<ClumpMovementController>
 {
-    [Space, SerializeField]
+    [Space]
+    [SerializeField]
     private Transform _cameraSystemPrefab;
 
-    public override ClumpController Spawn()
+    public override ClumpMovementController Spawn()
     {
         Instantiate(_cameraSystemPrefab, _T.position, _T.rotation);
         return base.Spawn();

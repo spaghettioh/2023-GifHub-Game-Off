@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,9 +19,7 @@ public static class LabelVisualElementExtensions
         label.SetText(value.ToString());
 
     public static Label SetElementText(
-        this VisualElement parent,
-        string id,
-        string value
+        this VisualElement parent, string id, string value
     )
     {
         var label = parent.GetLabel(id);
@@ -31,27 +27,22 @@ public static class LabelVisualElementExtensions
     }
 
     public static Label SetElementText(
-        this VisualElement element,
-        string id,
-        int value
-    ) => element.SetElementText(id, value.ToString());
+        this VisualElement element, string id, int value
+    ) =>
+        element.SetElementText(id, value.ToString());
 
     public static Label SetElementText(
-        this VisualElement element,
-        string id,
-        float value
-    ) => element.SetElementText(id, value.ToString());
+        this VisualElement element, string id, float value
+    ) =>
+        element.SetElementText(id, value.ToString());
 
     public static Label SetElementText<T>(
-        this VisualElement element,
-        string id,
-        T value
-    ) => element.SetElementText(id, value.ToString());
+        this VisualElement element, string id, T value
+    ) =>
+        element.SetElementText(id, value.ToString());
 
-    public static void SetTextColor(
-        this Label label,
-        Color color
-    ) {
+    public static void SetTextColor(this Label label, Color color)
+    {
         label.style.color = new(color);
         // foreach (var mapping in colorMap.Map)
         // {
@@ -59,7 +50,6 @@ public static class LabelVisualElementExtensions
         //     text = text.Replace($"</{mapping.Tag}>", "</color>");
         // }
         // return text;
-
     }
     // public static Label SetLabelColorStyle(
     //     this Label label,

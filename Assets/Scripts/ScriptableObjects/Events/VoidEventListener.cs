@@ -8,7 +8,7 @@ public class VoidEventListener : MonoBehaviour
     private VoidEventSO _event;
 
     [SerializeField]
-    private float _optionalDelay = 0f;
+    private float _optionalDelay;
 
     [SerializeField]
     private UnityEvent _onEventRaised;

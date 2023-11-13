@@ -1,9 +1,6 @@
 using System;
-using Nerdscape.Events.Logging;
 using UnityEngine;
 
-namespace Nerdscape.Events
-{
     public abstract class EventBase : ScriptableObject
     {
         public event Action OnEventRaised;
@@ -54,4 +51,3 @@ namespace Nerdscape.Events
                 arg1, arg2, arg3, arg4, src.BuildLogMessage(name)
             );
     }
-}

@@ -11,14 +11,12 @@ public class UIInitializationSystem : MonoBehaviour
     [SerializeField]
     private TransformAnchorSO _transformAnchor;
 
-    private void OnEnable() =>
-        _transformAnchor.OnTransformSet += HandleSpawned;
+    private void OnEnable() => _transformAnchor.OnTransformSet += HandleSpawned;
 
     private void OnDisable() =>
         _transformAnchor.OnTransformSet -= HandleSpawned;
-    
+
     private void Start() => _panelSettings.SetUISize();
 
-    private static void HandleSpawned(Transform _) =>
-        Camera.main.SetUICamera();
+    private static void HandleSpawned(Transform _) => Camera.main.SetUICamera();
 }

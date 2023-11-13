@@ -7,10 +7,10 @@ namespace Core.StateMachine
     public class StateMachine : ScriptableObject, IStateMachine
     {
         [field: SerializeField]
-        public List<IState> States { get; private set; }
+        public List<IState> States { get; }
 
         [field: SerializeField]
-        public IState InitialState { get; private set; }
+        public IState InitialState { get; }
 
         [Header("Debug ==========")]
         [SerializeField]
@@ -26,13 +26,14 @@ namespace Core.StateMachine
 
         internal virtual void AddStates()
         {
-            States.ForEach(state =>
-            {
-                if (!ContainsState(state))
-                {
-                    States.Add(state);
+            States.ForEach(
+                state => {
+                    if (!ContainsState(state))
+                    {
+                        States.Add(state);
+                    }
                 }
-            });
+            );
         }
 
         internal virtual void Initialize(Transform t)
@@ -48,7 +49,7 @@ namespace Core.StateMachine
             _currentState = InitialState;
             if (_currentState == null)
             {
-                throw new Exception(
+                throw new(
                     $"\n{name}.nextState is null on Initialize()!\tDid you forget to call SetInitialState()?"
                 );
             }
@@ -84,16 +85,13 @@ namespace Core.StateMachine
             {
                 if (null == InitialState)
                 {
-                    throw new Exception(
+                    throw new(
                         $"\n{name}.currentState is null when calling Execute()!\tDid you set initial state?\n{e.Message}"
                     );
                 }
-                else
-                {
-                    throw new Exception(
-                        $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
-                    );
-                }
+                throw new(
+                    $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
+                );
             }
         }
 
@@ -109,16 +107,13 @@ namespace Core.StateMachine
                 {
                     if (null == InitialState)
                     {
-                        throw new Exception(
+                        throw new(
                             $"\n{name}.currentState is null when calling Execute()!\tDid you set initial state?\n{e.Message}"
                         );
                     }
-                    else
-                    {
-                        throw new Exception(
-                            $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
-                        );
-                    }
+                    throw new(
+                        $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
+                    );
                 }
             }
         }
@@ -135,16 +130,13 @@ namespace Core.StateMachine
                 {
                     if (null == InitialState)
                     {
-                        throw new Exception(
+                        throw new(
                             $"\n{name}.currentState is null when calling Execute()!\tDid you set initial state?\n{e.Message}"
                         );
                     }
-                    else
-                    {
-                        throw new Exception(
-                            $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
-                        );
-                    }
+                    throw new(
+                        $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
+                    );
                 }
             }
         }
@@ -179,16 +171,13 @@ namespace Core.StateMachine
                 {
                     if (null == InitialState)
                     {
-                        throw new Exception(
+                        throw new(
                             $"\n{name}.currentState is null when calling Execute()!\tDid you set initial state?\n{e.Message}"
                         );
                     }
-                    else
-                    {
-                        throw new Exception(
-                            $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
-                        );
-                    }
+                    throw new(
+                        $"\n{name}.currentState is null when calling Execute()!\tDid you change state to a valid state?\n{e.Message}"
+                    );
                 }
             }
         }
@@ -197,7 +186,7 @@ namespace Core.StateMachine
         {
             if (_nextState != null)
             {
-                throw new Exception(
+                throw new(
                     $"{name} is already changing states, you must wait to call ChangeState()!\n"
                 );
             }
@@ -208,7 +197,7 @@ namespace Core.StateMachine
             }
             catch (KeyNotFoundException e)
             {
-                throw new Exception(
+                throw new(
                     $"\n{name}.ChangeState() cannot find the state in the machine!\tDid you add the state you are trying to change to?\n{e.Message}"
                 );
             }
@@ -216,20 +205,14 @@ namespace Core.StateMachine
             _onExit = true;
         }
 
-        public bool IsCurrentState(IState state)
-        {
-            return _currentState == state;
-        }
+        public bool IsCurrentState(IState state) => _currentState == state;
 
         public void RemoveState(IState state)
         {
             States.Remove(state);
         }
 
-        public bool ContainsState(IState state)
-        {
-            return States.Contains(state);
-        }
+        public bool ContainsState(IState state) => States.Contains(state);
 
         public void RemoveAllStates()
         {

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 1
   _priority: 1
-  <Music>k__BackingField: {fileID: 8300000, guid: 44e8ddac69a2b4f5986c2f8d26475ded, type: 3}
+  <Music>k__BackingField: {fileID: 8300000, guid: 712775cf39d704ec7a73049f1596c757,
+    type: 3}

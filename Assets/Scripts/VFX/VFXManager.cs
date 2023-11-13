@@ -9,7 +9,7 @@ public class VFXManager : MonoBehaviour
     [SerializeField]
     private VFXEventSO _vfxEvent;
 
-     private void Start() => _vfxHandlerPool.PreWarm(transform);
+    private void Start() => _vfxHandlerPool.PreWarm(transform);
 
     private void OnEnable()
     {

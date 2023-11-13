@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -57,7 +56,7 @@ public class AudioManager : MonoBehaviour
 
     private VaultKey HandlePlayback(AudioDataBase audioCue, Vector3 position)
     {
-        AudioHandler handler = _audioHandlerPool.Request(audioCue);
+        var handler = _audioHandlerPool.Request(audioCue);
         handler.gameObject.SetActive(true);
         handler.OnEmitterFinished += ReturnEmitterToPool;
         var key = VaultKey.Invalid;
@@ -84,10 +83,7 @@ public class AudioManager : MonoBehaviour
     }
 
     private void HandleRampVolume(
-        VaultKey key,
-        float startVolume,
-        float targetVolume,
-        float duration
+        VaultKey key, float startVolume, float targetVolume, float duration
     )
     {
         if (_vault.TryGetEntity(key, out var emitter))
@@ -105,10 +101,7 @@ public class AudioManager : MonoBehaviour
     }
 
     private void HandleRampPitchWithStart(
-        VaultKey key,
-        float start,
-        float target,
-        float duration
+        VaultKey key, float start, float target, float duration
     )
     {
         if (_vault.TryGetEntity(key, out var emitter))
@@ -184,7 +177,7 @@ public class AudioManager : MonoBehaviour
         {
 #if UNITY_EDITOR
             Debug.LogWarning(
-                $"{name} heard Pause event but there's " + $"no music emitter"
+                $"{name} heard Pause event but there's " + "no music emitter"
             );
 #endif
             return;
