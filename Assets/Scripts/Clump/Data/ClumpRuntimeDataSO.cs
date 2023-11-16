@@ -25,18 +25,22 @@ public class ClumpRuntimeDataSO : ScriptableObject
     public SphereCollider Collider { get; private set; }
     [field: SerializeField]
     public Transform Transform { get; private set; }
+    [field: SerializeField]
+    public Rigidbody Body { get; private set; }
     public Vector3 Euler => Transform.eulerAngles;
     public Vector3 Position => Transform.position;
     [field: SerializeField]
     public int CollectedCount { get; private set; }
     [field: SerializeField]
-    public float Velocity { get; private set; }
+    public Vector3 Velocity => Body.velocity;
+    public float CurrentSpeed => Velocity.magnitude;
     [field: SerializeField]
     public float MoveForce { get; private set; }
 
-    public void ConfigureData(Transform t, SphereCollider c)
+    public void ConfigureData(Transform t, Rigidbody b, SphereCollider c)
     {
         Transform = t;
+        Body = b;
         Collider = c;
 
         MoveForce = MinMoveForce;
@@ -60,34 +64,9 @@ public class ClumpRuntimeDataSO : ScriptableObject
         RaiseStatsChange();
     }
 
-    public void SetVelocity(float value) => Velocity = value;
-
     private void RaiseStatsChange()
     {
-        if (OnPropCountChanged != null)
-        {
-            OnPropCountChanged.Invoke(CollectedCount);
-        }
-#if UNITY_EDITOR
-        else
-        {
-            Debug.LogWarning(
-                $"{name} announced a size change" + " by no one listens."
-            );
-        }
-#endif
-
-        if (OnStatsChanged != null)
-        {
-            OnStatsChanged.Invoke(MoveForce);
-        }
-#if UNITY_EDITOR
-        else
-        {
-            Debug.LogWarning(
-                $"{name} announced a size change" + " by no one listens."
-            );
-        }
-#endif
+        OnPropCountChanged.CheckSubscriptions(CollectedCount, name);
+        OnStatsChanged.CheckSubscriptions(MoveForce, name);
     }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9e9a7ca856425c904af8de9c660b30, type: 3}
+  m_Name: Prop_Test07AboveAverage
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: 
+  <Description>k__BackingField: 
+  <Group>k__BackingField: 0
+  <SoundEffect>k__BackingField: {fileID: 11400000, guid: 049eccdd06e6b456e98342320c474d7e,
+    type: 2}
+  <Size>k__BackingField: 455
+  <SizeCategory>k__BackingField: 60

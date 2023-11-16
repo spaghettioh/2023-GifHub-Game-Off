@@ -109,7 +109,7 @@ public class PropManager : MonoBehaviour
 
     private void CrashIntoProp(PropHandler p)
     {
-        if (_clumpData.Velocity >= _clumpData.MaxSpeed / 2)
+        if (_clumpData.CurrentSpeed >= _clumpData.MaxSpeed / 2)
         {
             _audioEvent.RaisePlayback(_crashSoundLarge);
             _crashEvent.Raise(name);
@@ -118,7 +118,7 @@ public class PropManager : MonoBehaviour
             // TODO make this query return all attaching or just the last one
             if (_propCollection.Count > 0)
             {
-                var attaching = _propCollection.AttachingProps;
+                List<PropHandler> attaching = _propCollection.AttachingProps;
                 if (attaching.Count > 0)
                 {
                     attaching.ForEach(p => UncollectProp(p));
