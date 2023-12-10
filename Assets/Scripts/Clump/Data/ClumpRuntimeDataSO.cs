@@ -37,7 +37,7 @@ public class ClumpRuntimeDataSO : ScriptableObject
     [field: SerializeField]
     public float MoveForce { get; private set; }
 
-    public void ConfigureData(Transform t, Rigidbody b, SphereCollider c)
+    public void Initialize(Transform t, Rigidbody b, SphereCollider c)
     {
         Transform = t;
         Body = b;

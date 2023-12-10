@@ -50,15 +50,19 @@ public class PropManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _clumpData.OnPropCountChanged += AdjustPropsCollectable;
-        _propCollectEvent.OnEventRaised += CollectProp;
+        // _clumpData.OnPropCountChanged += AdjustPropsCollectable;
+        // _propCollectEvent.OnEventRaised += CollectProp;
+        PropEvent.OnPropCollected += CollectProp;
+        PropEvent.OnPropCrash += CrashIntoProp;
         // PropCollisionSystem.OnCollision += ProcessCollision;
     }
 
     private void OnDisable()
     {
-        _clumpData.OnPropCountChanged -= AdjustPropsCollectable;
-        _propCollectEvent.OnEventRaised -= CollectProp;
+        // _clumpData.OnPropCountChanged -= AdjustPropsCollectable;
+        // _propCollectEvent.OnEventRaised -= CollectProp;
+        PropEvent.OnPropCollected -= CollectProp;
+        PropEvent.OnPropCrash -= CrashIntoProp;
         // PropCollisionSystem.OnCollision -= ProcessCollision;
     }
 
@@ -98,13 +102,15 @@ public class PropManager : MonoBehaviour
         _clumpForceIncrement = (maxForce - minForce) / _props.Count();
     }
 
-    private void CollectProp(PropHandler p)
+    private void CollectProp(PropHandler prop)
     {
-        _audioEvent.RaisePlayback(_defaultCollectSound);
-        _propCollection.AddProp(p);
-        _collectableProps.Remove(p);
-        p.SetCollected(_audioEvent);
-        _clumpData.IncreaseSize(_clumpRadiusIncrement, _clumpForceIncrement);
+        Debug.Log("PropMgr heard u like props");
+        prop.SetCollected();
+        // _audioEvent.RaisePlayback(_defaultCollectSound);
+        // _propCollection.AddProp(p);
+        // _collectableProps.Remove(p);
+        // // p.SetCollected(_audioEvent);
+        // _clumpData.IncreaseSize(_clumpRadiusIncrement, _clumpForceIncrement);
     }
 
     private void CrashIntoProp(PropHandler p)
@@ -141,7 +147,7 @@ public class PropManager : MonoBehaviour
         _propCollection.RemoveProp(p);
         _collectableProps.Add(p);
         _clumpData.DecreaseSize(_clumpRadiusIncrement, _clumpForceIncrement);
-        p.DetachFromClump();
+        // p.DetachFromClump();
     }
 
     private void AdjustPropsCollectable(int count = 0)

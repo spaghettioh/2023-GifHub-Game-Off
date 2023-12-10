@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PropHandler : MonoBehaviour
 {
+    [field: SerializeField]
+    public PropDataSO PropData { get; private set; }
+
     [SerializeField]
-    private PropDataSO _propData;
+    private Transform _graphic;
 
     public bool IsAttaching { get; private set; }
     public bool IsCollectable { get; private set; }
@@ -36,12 +39,14 @@ public class PropHandler : MonoBehaviour
         _originalParent = transform.parent;
         TryGetComponent(out _t);
         SetTrailActive(false);
+        IsCollectable = true;
     }
 
-    public SoundEffectAudioDataSO SetCollected(AudioEventSO audioEvent)
+    public float SetCollected()
     {
+        GetComponent<Collider>().isTrigger = false;
         // Disable colliders, turn off collectability, inform manager
-        ToggleCollectable(false);
+        SetIsCollectable(false);
         // _colliders.ForEach(c => c.gameObject.SetActive(false));
 
         CreateAttachPoint();
@@ -49,7 +54,7 @@ public class PropHandler : MonoBehaviour
         // Waits for one second to see if a crash will uncollect it
         _t.DOLocalMove(_t.localPosition, 1f).OnComplete(MoveTowardAttachPoint);
 
-        return _propData.SoundEffect;
+        return PropData.SizeToCollect;
     }
 
     private void CreateAttachPoint()
@@ -66,7 +71,7 @@ public class PropHandler : MonoBehaviour
     private void MoveTowardAttachPoint()
     {
         // Then move towards it
-        _t.DOLocalMove(Vector3.zero, _attachDuration).OnComplete(
+        _t.DOLocalMove(Vector3.zero, 1f).OnComplete(
             () => {
                 _t.SetParent(_clumpData.Transform);
                 Destroy(_attachPoint);
@@ -75,7 +80,7 @@ public class PropHandler : MonoBehaviour
         );
     }
 
-    public void ToggleCollectable(bool onOff)
+    public void SetIsCollectable(bool onOff)
     {
         IsCollectable = onOff;
     }
@@ -148,11 +153,11 @@ public class PropHandler : MonoBehaviour
         SetTrailActive(false);
 
         // Resets the prop
-        ToggleCollectable(true);
+        SetIsCollectable(true);
     }
 
     private void SetTrailActive(bool active) =>
-        _uncollectTrail.gameObject.SetActive(active);
+        _uncollectTrail.emitting = false;
 
     private void OnDrawGizmos()
     {

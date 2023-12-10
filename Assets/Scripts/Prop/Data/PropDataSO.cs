@@ -19,7 +19,7 @@ public class PropDataSO : ScriptableObject
     [field: Header("Size info")]
     [field: Tooltip("Size in cm")]
     [field: SerializeField]
-    public float Size { get; private set; }
+    public float SizeToCollect { get; private set; }
 
     [field: SerializeField]
     public PropSizeCategory SizeCategory { get; private set; }

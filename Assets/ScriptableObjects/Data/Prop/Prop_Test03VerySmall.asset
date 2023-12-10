@@ -17,5 +17,5 @@ MonoBehaviour:
   <Group>k__BackingField: 0
   <SoundEffect>k__BackingField: {fileID: 11400000, guid: 049eccdd06e6b456e98342320c474d7e,
     type: 2}
-  <Size>k__BackingField: 182
+  <SizeToCollect>k__BackingField: 183
   <SizeCategory>k__BackingField: 20
